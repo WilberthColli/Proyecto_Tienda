@@ -50,22 +50,21 @@
                             <div class="logo">
                                 <a th:href="@{/index.html}"><img th:src="@{/img/logo/logo.png}" alt=""></a>
                             </div>
-                            <!-- Main-menu -->
+                            <!-- Main-incmenu -->
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
                                         <li><a th:href="@{/index}">Home</a></li> 
                                         <li><a th:href="@{/shop}">shop</a></li>
                                         <li><a href="about.html">About</a></li>
-                                        <li><a href="blog.html">Blog</a>
+                                        <li><a href="blog.html">Admin</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog_details.html">Blog Details</a></li>
-                                                <li><a href="elements.html">Elements</a></li>
+                                                 <li><a th:href="@{/product_details}">lista</a></li>
+                                                <li><a th:href="@{/formulario/formJoya}">Register</a></li>
                                                 <li><a href="product_details.html">Product Details</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>   
@@ -190,9 +189,9 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
                             <div class="popular-img">
-                                <img th:src="@{/img/gallery/popular1.png}" alt="">
+                                <img th:src="@{/img/gallery/secundario1.WEBP}" alt="">
                                 <div class="img-cap">
-                                    <span>Glasses</span>
+                                    <span>Anillos</span>
                                 </div>
                                 <div class="favorit-items">
                                  <a href="shop.html" class="btn">Shop Now</a>
@@ -203,9 +202,9 @@
                  <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                         <div class="popular-img">
-                            <img th:src="@{/img/gallery/popular2.png}" alt="">
+                            <img th:src="@{/img/gallery/secundario2.jpg}" alt="">
                             <div class="img-cap">
-                                <span>Watches</span>
+                                <span>Bolsos</span>
                             </div>
                             <div class="favorit-items">
                              <a href="shop.html" class="btn">Shop Now</a>
@@ -216,9 +215,9 @@
              <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                     <div class="popular-img">
-                        <img th:src="@{/img/gallery/popular3.png}" alt="">
+                        <img th:src="@{/img/gallery/secundario3.jpg}" alt="">
                         <div class="img-cap">
-                            <span>Jackets</span>
+                            <span>Gafas</span>
                         </div>
                         <div class="favorit-items">
                          <a href="shop.html" class="btn">Shop Now</a>
@@ -229,9 +228,9 @@
          <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
                 <div class="popular-img">
-                    <img th:src="@{/img/gallery/popular4.png}" alt="">
+                    <img th:src="@{/img/gallery/secundario4.WEBP}" alt="">
                     <div class="img-cap">
-                        <span>Clothes</span>
+                        <span>Fragancias</span>
                     </div>
                     <div class="favorit-items">
                      <a href="shop.html" class="btn">Shop Now</a>
@@ -258,7 +257,7 @@
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                 <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
                     <div class="popular-img">
-                        <img th:src="@{/img/gallery/arrival1.png}" alt="">
+                        <img th:src="@{/img/gallery/joya1.WEBP}" alt="">
                         <div class="favorit-items">
                             <!-- <span class="flaticon-heart"></span> -->
                             <img th:src="@{/img/gallery/favorit-card.png}" alt="">
@@ -280,7 +279,7 @@
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                 <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                     <div class="popular-img">
-                        <img th:src="@{/img/gallery/arrival2.png}" alt="">
+                        <img th:src="@{/img/gallery/joya2.WEBP}" alt="">
                         <div class="favorit-items">
                             <!-- <span class="flaticon-heart"></span> -->
                             <img th:src="@{/img/gallery/favorit-card.png}" alt="">
@@ -302,7 +301,7 @@
         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
             <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                 <div class="popular-img">
-                    <img th:src="@{/img/gallery/arrival3.png}" alt="">
+                    <img th:src="@{/img/gallery/joya6.WEBP}" alt="">
                     <div class="favorit-items">
                         <!-- <span class="flaticon-heart"></span> -->
                         <img th:src="@{/img/gallery/favorit-card.png}" alt="">
@@ -324,7 +323,7 @@
     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
         <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
             <div class="popular-img">
-                <img th:src="@{/img/gallery/arrival4.png}" alt="">
+                <img th:src="@{/img/gallery/joya4.WEBP}" alt="">
                 <div class="favorit-items">
                     <!-- <span class="flaticon-heart"></span> -->
                     <img th:src="@{/img/gallery/favorit-card.png}" alt="">
@@ -343,94 +342,9 @@
         </div>
     </div>
 </div>
-<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-    <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-        <div class="popular-img">
-            <img src="assets/img/gallery/arrival5.png" alt="">
-            <div class="favorit-items">
-                <!-- <span class="flaticon-heart"></span> -->
-                <img th:src="@{/img/gallery/favorit-card.png}" alt="">
-            </div>
-        </div>
-        <div class="popular-caption">
-         <h3><a href="product_details.html">Knitted Jumper</a></h3>
-         <div class="rating mb-10">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-        </div>
-        <span>$ 30.00</span>
-    </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-    <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-        <div class="popular-img">
-            <img th:src="@{/img/gallery/arrival6.png}" alt="">
-            <div class="favorit-items">
-                <!-- <span class="flaticon-heart"></span> -->
-                <img th:src="@{/img/gallery/favorit-card.png}" alt="">
-            </div>
-        </div>
-        <div class="popular-caption">
-         <h3><a href="product_details.html">Knitted Jumper</a></h3>
-         <div class="rating mb-10">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-        </div>
-        <span>$ 30.00</span>
-    </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-    <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
-        <div class="popular-img">
-            <img th:src="@{/img/gallery/arrival7.png}" alt="">
-            <div class="favorit-items">
-                <!-- <span class="flaticon-heart"></span> -->
-                <img th:src="@{/img/gallery/favorit-card.png}" alt="">
-            </div>
-        </div>
-        <div class="popular-caption">
-         <h3><a href="product_details.html">Knitted Jumper</a></h3>
-         <div class="rating mb-10">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-        </div>
-        <span>$ 30.00</span>
-    </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-    <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
-        <div class="popular-img">
-            <img th:src="@{/img/gallery/arrival8.png}" alt="">
-            <div class="favorit-items">
-                <!-- <span class="flaticon-heart"></span> -->
-                <img th:src="@{/img/gallery/favorit-card.png}" alt="">
-            </div>
-        </div>
-        <div class="popular-caption">
-         <h3><a href="product_details.html">Knitted Jumper</a></h3>
-         <div class="rating mb-10">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-        </div>
-        <span>$ 30.00</span>
-    </div>
-</div>
-</div>
+
+
+
 </div>
 <!-- Button -->
 <div class="row justify-content-center">
@@ -442,7 +356,7 @@
 </div>
 <!--? New Arrival End -->
 <!--? collection -->
-<section class="collection section-bg2 section-padding30 section-over1 ml-15 mr-15" data-background="{@/img/gallery/section_bg01.png}">
+<section class="collection section-bg2 section-padding30 section-over1 ml-15 mr-15" data-background="{@/img/gallery/principal1.jpg}">
     <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9">
@@ -463,7 +377,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="single-product mb-50">
                     <div class="location-img">
-                        <img th:src="@{/img/gallery/popular-imtes1.png}" alt="">
+                        <img th:src="@{/img/gallery/secundario5.jpg}" alt="">
                     </div>
                     <div class="location-details">
                         <p><a href="product_details.html">Established fact that by the<br> readable content</a></p>
@@ -474,7 +388,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="single-product mb-50">
                     <div class="location-img">
-                        <img th:src="@{/img/gallery/popular-imtes2.png}" alt="">
+                        <img th:src="@{/img/gallery/principal3.jpg}" alt="">
                     </div>
                     <div class="location-details">
                         <p><a href="product_details.html">Established fact that by the<br> readable content</a></p>

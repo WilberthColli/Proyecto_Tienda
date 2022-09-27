@@ -1,5 +1,4 @@
 <div th:insert="fragments/header :: header-area"></div>
-
     <main>
         <!--? Hero Area Start-->
         <div class="container-fluid">
@@ -40,7 +39,7 @@
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
                                         <h1>fashion<br>changing<br>always</h1>
-                                        <a href="shop.html" class="btn">Shop Now</a>
+                                        <a th:href="@{shop}" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +53,7 @@
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
                                         <h1>fashion<br>changing<br>always</h1>
-                                        <a href="shop.html" class="btn">Shop Now</a>
+                                        <a th:href="@{/shop}" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +67,7 @@
                                     <!-- Hero Caption -->
                                     <div class="hero__caption">
                                         <h1>fashion<br>changing<br>always</h1>
-                                        <a href="shop.html" class="btn">Shop Now</a>
+                                        <a th:href="@{/shop}" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -82,58 +81,46 @@
         <div class="popular-items pt-50">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-7 col-sm-7">
                         <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
                             <div class="popular-img">
                                 <img th:src="@{/img/gallery/secundario1.WEBP}" alt="">
                                 <div class="img-cap">
-                                    <span>Anillos</span>
+                                    <span>Collares</span>
                                 </div>
                                 <div class="favorit-items">
-                                 <a href="shop.html" class="btn">Shop Now</a>
+                                 <a th:href="@{/collares}" class="btn">Shop Now</a>
                              </div>
                          </div>
                      </div>
                  </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6">
+                 <div class="col-lg-4 col-md-7 col-sm-7">
                     <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                         <div class="popular-img">
-                            <img th:src="@{/img/gallery/secundario2.jpg}" alt="">
+                            <img th:src="@{/img/gallery/secundario3.jpg}" alt="">
                             <div class="img-cap">
-                                <span>Bolsos</span>
+                                <span>Pendientes</span>
                             </div>
                             <div class="favorit-items">
-                             <a href="shop.html" class="btn">Shop Now</a>
+                             <a th:href="@{/pendientes}" class="btn">Shop Now</a>
                          </div>
                      </div>
                  </div>
              </div>
-             <div class="col-lg-3 col-md-6 col-sm-6">
+             <div class="col-lg-4 col-md-7 col-sm-7">
                 <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                     <div class="popular-img">
-                        <img th:src="@{/img/gallery/secundario3.jpg}" alt="">
+                        <img th:src="@{/img/gallery/secundario2.jpg}" alt="">
                         <div class="img-cap">
-                            <span>Gafas</span>
+                            <span>Brazaletes</span>
                         </div>
                         <div class="favorit-items">
-                         <a href="shop.html" class="btn">Shop Now</a>
+                         <a th:href="@{/brazaletes}" class="btn">Shop Now</a>
                      </div>
                  </div>
              </div>
          </div>
-         <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                <div class="popular-img">
-                    <img th:src="@{/img/gallery/secundario4.WEBP}" alt="">
-                    <div class="img-cap">
-                        <span>Fragancias</span>
-                    </div>
-                    <div class="favorit-items">
-                     <a href="shop.html" class="btn">Shop Now</a>
-                 </div>
-             </div>
-         </div>
-     </div>
+       
  </div>
 </div>
 </div>
@@ -160,7 +147,7 @@
                         </div>
                     </div>
                     <div class="popular-caption">
-                        <h3><a href="product_details.html">Knitted Jumper</a></h3>
+                        <h3><a href="#">Knitted Jumper</a></h3>
                         <div class="rating mb-10">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -182,7 +169,7 @@
                         </div>
                     </div>
                     <div class="popular-caption">
-                     <h3><a href="product_details.html">Knitted Jumper</a></h3>
+                     <h3><a href="#">Knitted Jumper</a></h3>
                      <div class="rating mb-10">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -204,7 +191,7 @@
                     </div>
                 </div>
                 <div class="popular-caption">
-                 <h3><a href="product_details.html">Knitted Jumper</a></h3>
+                 <h3><a href="#">Knitted Jumper</a></h3>
                  <div class="rating mb-10">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -226,7 +213,7 @@
                 </div>
             </div>
             <div class="popular-caption">
-             <h3><a href="product_details.html">Knitted Jumper</a></h3>
+             <h3><a href="#">Knitted Jumper</a></h3>
              <div class="rating mb-10">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -245,7 +232,7 @@
 <!-- Button -->
 <div class="row justify-content-center">
     <div class="room-btn">
-        <a href="catagori.html" class="border-btn">Browse More</a>
+        <a th:href="@{/shop}" class="border-btn">Browse More</a>
     </div>
 </div>
 </div>
@@ -297,9 +284,5 @@
 </div>
 <!-- Popular Locations End -->
 
-<div th:insert="fragments/services :: services-area"></div>
 </main>
 <div th:insert="fragments/footer :: footer-area"></div>
-
-</body>
-</html>

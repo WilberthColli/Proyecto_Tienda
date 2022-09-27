@@ -1,5 +1,5 @@
 <div th:insert="fragments/header :: header-area"></div>
-      
+    
     <main>
         <!-- breadcrumb Start-->
         <div class="page-notification">
@@ -70,6 +70,19 @@
 		  </div>
 		  
 		  <br>
+		 
+		  <div class="mt-10">
+		 <select name=" Categorías">
+		 
+		 <option value="Reloj"></option>
+		 <option value="Collar"></option>
+		 <option value="Aretes"></option>
+		 
+		 
+		 </select>
+		  </div>
+		  
+		  <br>
 		  
 		  <div class="mt-10">
 		  <label class="mb-30" for="precio">Precio:</label><br>
@@ -94,7 +107,5 @@
 	</div>
 	
 </main>
-<div th:insert="fragments/footer :: footer-area"></div>
 
-</body>
-</html>
+   <div th:insert="fragments/footer :: footer-area"></div>

@@ -18,11 +18,12 @@ public class ProductosController {
 	@Autowired
 	private IProductosService serviceProductos;
 
-	@GetMapping("/delete/{id}")
+	@GetMapping("/delete")
 	public String eliminar(@RequestParam("id") int idProducto, Model model) {
 		System.out.println("Borrando producto con id: " + idProducto);
 		model.addAttribute("id", idProducto);
-		return "mensaje";
+		return "delete";
+		
 	}
 	
 	@GetMapping("/view/{id}")
@@ -30,7 +31,8 @@ public class ProductosController {
 		
 		Producto producto = serviceProductos.buscarPorId(idProducto);
 		model.addAttribute("producto", producto);
-		
+ 
 		return "product_details";
+		//relativa
 	}
 }

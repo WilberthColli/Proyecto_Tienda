@@ -21,8 +21,8 @@
                 <div class="row">
                     <div class="col-xl-7 col-lg-8 col-md-10">
                         <div class="section-tittle mb-50">
-                            <h2>Shop with us</h2>
-                            <p>Browse from 230 latest items</p>
+                            <h2>Pendientes</h2>
+                            <p>-----------------</p>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,8 @@
                             <div class="row"  >
 
                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6" id="mytable" th:each="producto : ${productos}">
-                                    <div class="single-new-arrival mb-50 text-center"  >
+                              <div th:if="${producto.categoria==2}" >
+                               <div class="single-new-arrival mb-50 text-center"  >
                                         <div class="popular-img">
                                             <img th:src="@{/img/gallery/{img} ( img=${producto.imagen} ) }" alt="">
                                             <div class="favorit-items">
@@ -55,8 +56,11 @@
                                             <i class="fas fa-star"></i>
                                         </div>
                                         <span th:text="${producto.precio}">$ 30.00</span>
+                                        <span th:text="${producto.ofertas}">$ 30.00</span>
                                        <span> <a th:href="@{/productos/view/{id} (id=${producto.id})  }" class="btn btn-success">Detalle</a></span> 
                                        
+                              </div>
+                                   
                                        
                                      
                                     </div>

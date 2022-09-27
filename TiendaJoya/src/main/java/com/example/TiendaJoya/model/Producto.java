@@ -8,7 +8,16 @@ public class Producto {
 		private String descripcion;
 		private Date fecha;
 		private Double precio;
+		private String ofertas;
 		private Integer destacado;
+		private Integer categoria;
+		
+		
+		
+		public void setCategoria(Integer categoria) {
+			this.categoria = categoria;
+		}
+	
 		private String imagen="no-image.png";
 		
 		public Integer getId() {
@@ -29,6 +38,12 @@ public class Producto {
 		public void setDescripcion(String descripcion) {
 			this.descripcion = descripcion;
 		}
+		public String getOfertas() {
+			return ofertas;
+		}
+		public void setOfertas(String ofertas) {
+			this.ofertas = ofertas;
+		}
 		public Date getFecha() {
 			return fecha;
 		}
@@ -38,11 +53,14 @@ public class Producto {
 		public Double getPrecio() {
 			return precio;
 		}
-		public void setPrecio(Double salario) {
-			this.precio = salario;
+		public void setPrecio(Double precio) {
+			this.precio = precio;
 		}
 		public Integer getDestacado() {
 			return destacado;
+		}
+		public Integer getCategoria() {
+			return categoria;
 		}
 		public void setDestacado(Integer destacado) {
 			this.destacado = destacado;
@@ -57,12 +75,15 @@ public class Producto {
 		@Override
 		public String toString() {
 			return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", fecha=" + fecha
-					+ ", precio=" + precio + "]";
+					+ ", precio=" + precio + ", ofertas=" + ofertas + ", categoria=" + categoria + ", destacado="
+					+ destacado + ", imagen=" + imagen + "]";
 		}
 		
 		
 		
+		
 	}
+
 
 
 

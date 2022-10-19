@@ -6,11 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-
 import com.example.TiendaJoya.model.Producto;
-
-import org.springframework.stereotype.Service;
 
 @Service
 public class ProductosServiceImpl implements IProductosService {

@@ -6,172 +6,161 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
-import com.example.TiendaJoya.model.Producto;
-
-import org.springframework.stereotype.Service;
+import com.example.TiendaJoya.model.Productos;
 
 @Service
 public class ProductosServiceImpl implements IProductosService {
 
-		private List<Producto> lista = null;
-		
-		public ProductosServiceImpl() {
-			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-			lista = new LinkedList<Producto>();
-			try {
-				// Creamos la oferta de trabajo 1
-				Producto producto1 = new Producto();
-				producto1.setId(1);
-				producto1.setNombre("Collar V");
-				producto1.setDescripcion("Cadena de oro delgada con dije V exclusivo de Versache. ");
-				producto1.setFecha(sdf.parse("08-02-2019"));
-				producto1.setPrecio(20000.0);
-				producto1.setDestacado(1);
-				producto1.setImagen("joya1.webp");
-				producto1.setOfertas("-30%");
-				producto1.setCategoria(1);
-				
-				
-				// Creamos la oferta de trabajo 2
-				Producto producto4 = new Producto();
-				producto4.setId(2);
-				producto4.setNombre("Pendientes de Circonia");
-				producto4.setDescripcion("Pendientes de circonias negras con diamantes incrustados. ");
-				producto4.setFecha(sdf.parse("09-02-2019"));
-				producto4.setPrecio(32500.0);
-				producto4.setDestacado(0);
-				producto4.setImagen("joya2.webp");
-				producto4.setOfertas("--");
-				producto4.setCategoria(2);
+	private List<Productos> lista = null;
 
-				// Creamos la oferta de trabajo 3
-				Producto producto2 = new Producto();
-				producto2.setId(3);
-				producto2.setNombre("Cadena Brethc");
-				producto2.setDescripcion("Cadena de oro de 24kilates con diseño exclusivo de Versache. ");
-				producto2.setFecha(sdf.parse("10-02-2019"));
-				producto2.setPrecio(19500.0);
-				producto2.setDestacado(0);
-				producto2.setImagen("joya3.webp");
-				producto2.setOfertas("--");
-				producto2.setCategoria(1);
-				
-				// Creamos la oferta de trabajo 4
-				Producto producto3 = new Producto();
-				producto3.setId(4);
-				producto3.setNombre("Cadena Royals King");
-				producto3.setDescripcion("Cadena de oro con incrustacion del logo versache exclusiva de la temporada. ");
-				producto3.setFecha(sdf.parse("11-02-2019"));
-				producto3.setPrecio(40000.0);
-				producto3.setDestacado(1);
-				producto3.setImagen("joya4.webp");
-				producto3.setOfertas("-6%");
-				producto3.setCategoria(1);
-				
-				// Creamos la oferta de trabajo 4
-				Producto producto7 = new Producto();
-				producto7.setId(5);
-				producto7.setNombre("Brazalete Brethc");
-				producto7.setDescripcion("Brazalete de oro laminado de 24 kilates con diseño exclusivo de Versache. ");
-				producto7.setFecha(sdf.parse("11-02-2019"));
-				producto7.setPrecio(2500.0);
-				producto7.setDestacado(1);
-				producto7.setImagen("joya5.webp");
-				producto7.setOfertas("-5%");
-				producto7.setCategoria(3);
-				
-				// Creamos la oferta de trabajo 4
-				Producto producto8 = new Producto();
-				producto8.setId(6);
-				producto8.setNombre("Brazalete Medusa");
-				producto8.setDescripcion("Brazalete de oro y plata con incrustacion de oro del logo Medusa ícono de Versache. ");
-				producto8.setFecha(sdf.parse("11-02-2019"));
-				producto8.setPrecio(20000.0);
-				producto8.setDestacado(1);
-				producto8.setImagen("joya6.webp");
-				producto8.setOfertas("-30%");
-				producto8.setCategoria(3);
-				
-				// Creamos la oferta de trabajo 4
-				Producto producto9 = new Producto();
-				producto9.setId(7);
-				producto9.setNombre("Pulsera Leitreh");
-				producto9.setDescripcion("Pulsera de cuero con incrustaciones de oro con el logo ícono de Versache. ");
-				producto9.setFecha(sdf.parse("11-02-2019"));
-				producto9.setPrecio(10500.0);
-				producto9.setDestacado(0);
-				producto9.setImagen("joya7.webp");
-				producto9.setOfertas("--");
-				producto9.setCategoria(3);
-				
-				// Creamos la oferta de trabajo 4
-				Producto producto5 = new Producto();
-				producto5.setId(8);
-				producto5.setNombre("Pendientes de Perla");
-				producto5.setDescripcion("Pendientes de oro con logo Versache con incrustaciones de perlas blancas exclusivas de temporada. ");
-				producto5.setFecha(sdf.parse("11-02-2019"));
-				producto5.setPrecio(45000.0);
-				producto5.setDestacado(1);
-				producto5.setImagen("joya8.webp");
-				producto5.setOfertas("-25%");
-				producto5.setCategoria(2);
-				
-				// Creamos la oferta de trabajo 4
-				Producto producto6 = new Producto();
-				producto6.setId(9);
-				producto6.setNombre("Pendientes Medusa");
-				producto6.setDescripcion("Pendientes de oro con incrustaciones de diamantes con diseño exclusivo de Versache. ");
-				producto6.setFecha(sdf.parse("11-02-2019"));
-				producto6.setPrecio(20000.0);
-				producto6.setDestacado(1);
-				producto6.setImagen("joya9.webp");
-				producto6.setOfertas("-14%");
-				producto6.setCategoria(2);
-				
-				
-				/**
-				 * Agregamos los 4 objetos de tipo Vacante a la lista...
-				 * 
-				 */
-				
-				lista.add(producto1);
-				lista.add(producto2);
-				lista.add(producto3);
-				lista.add(producto4);
-				lista.add(producto5);
-				lista.add(producto6);
-				lista.add(producto7);
-				lista.add(producto8);
-				lista.add(producto9);
-				
-				
+	public ProductosServiceImpl() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		lista = new LinkedList<Productos>();
+		try {
+			// Creamos la oferta de trabajo 1
+			Productos Productos1 = new Productos();
+			Productos1.setId(1);
+			Productos1.setNombre("Collar V");
+			Productos1.setDescripcion("Cadena de oro delgada con dije V exclusivo de Versache. ");
+			Productos1.setFecha(sdf.parse("08-02-2019"));
+			Productos1.setPrecio(20000.0);
+			Productos1.setDestacado(1);
+			Productos1.setImagen("joya1.webp");
+			Productos1.setOferta("-30%");
+			Productos1.setIdCategoria(1);
 
+			// Creamos la oferta de trabajo 2
+			Productos Productos4 = new Productos();
+			Productos4.setId(2);
+			Productos4.setNombre("Pendientes de Circonia");
+			Productos4.setDescripcion("Pendientes de circonias negras con diamantes incrustados. ");
+			Productos4.setFecha(sdf.parse("09-02-2019"));
+			Productos4.setPrecio(32500.0);
+			Productos4.setDestacado(0);
+			Productos4.setImagen("joya2.webp");
+			Productos4.setOferta("--");
+			Productos4.setIdCategoria(2);
 
-			} catch (ParseException e) {
-				System.out.println("Error: " + e.getMessage());
-			}
+			// Creamos la oferta de trabajo 3
+			Productos Productos2 = new Productos();
+			Productos2.setId(3);
+			Productos2.setNombre("Cadena Brethc");
+			Productos2.setDescripcion("Cadena de oro de 24kilates con diseño exclusivo de Versache. ");
+			Productos2.setFecha(sdf.parse("10-02-2019"));
+			Productos2.setPrecio(19500.0);
+			Productos2.setDestacado(0);
+			Productos2.setImagen("joya3.webp");
+			Productos2.setOferta("--");
+			Productos2.setIdCategoria(1);
 
-		}
-		
-		@Override
-		public List<Producto> buscarTodas() {
-			return lista;
-		}
+			// Creamos la oferta de trabajo 4
+			Productos Productos3 = new Productos();
+			Productos3.setId(4);
+			Productos3.setNombre("Cadena Royals King");
+			Productos3.setDescripcion("Cadena de oro con incrustacion del logo versache exclusiva de la temporada. ");
+			Productos3.setFecha(sdf.parse("11-02-2019"));
+			Productos3.setPrecio(40000.0);
+			Productos3.setDestacado(1);
+			Productos3.setImagen("joya4.webp");
+			Productos3.setOferta("-6%");
+			Productos3.setIdCategoria(1);
 
-		@Override
-		public Producto buscarPorId(Integer idProducto) {
-			
-			for (Producto v : lista) {
-				if (v.getId()==idProducto) {
-					return v;
-				}
-			}
-			
-			return null;
+			// Creamos la oferta de trabajo 4
+			Productos Productos7 = new Productos();
+			Productos7.setId(5);
+			Productos7.setNombre("Brazalete Brethc");
+			Productos7.setDescripcion("Brazalete de oro laminado de 24 kilates con diseño exclusivo de Versache. ");
+			Productos7.setFecha(sdf.parse("11-02-2019"));
+			Productos7.setPrecio(2500.0);
+			Productos7.setDestacado(1);
+			Productos7.setImagen("joya5.webp");
+			Productos7.setOferta("-5%");
+			Productos7.setIdCategoria(3);
+
+			// Creamos la oferta de trabajo 4
+			Productos Productos8 = new Productos();
+			Productos8.setId(6);
+			Productos8.setNombre("Brazalete Medusa");
+			Productos8.setDescripcion(
+					"Brazalete de oro y plata con incrustacion de oro del logo Medusa ícono de Versache. ");
+			Productos8.setFecha(sdf.parse("11-02-2019"));
+			Productos8.setPrecio(20000.0);
+			Productos8.setDestacado(1);
+			Productos8.setImagen("joya6.webp");
+			Productos8.setOferta("-30%");
+			Productos8.setIdCategoria(3);
+
+			// Creamos la oferta de trabajo 4
+			Productos Productos9 = new Productos();
+			Productos9.setId(7);
+			Productos9.setNombre("Pulsera Leitreh");
+			Productos9.setDescripcion("Pulsera de cuero con incrustaciones de oro con el logo ícono de Versache. ");
+			Productos9.setFecha(sdf.parse("11-02-2019"));
+			Productos9.setPrecio(10500.0);
+			Productos9.setDestacado(0);
+			Productos9.setImagen("joya7.webp");
+			Productos9.setOferta("--");
+			Productos9.setIdCategoria(3);
+
+			// Creamos la oferta de trabajo 4
+			Productos Productos5 = new Productos();
+			Productos5.setId(8);
+			Productos5.setNombre("Pendientes de Perla");
+			Productos5.setDescripcion(
+					"Pendientes de oro con logo Versache con incrustaciones de perlas blancas exclusivas de temporada. ");
+			Productos5.setFecha(sdf.parse("11-02-2019"));
+			Productos5.setPrecio(45000.0);
+			Productos5.setDestacado(1);
+			Productos5.setImagen("joya8.webp");
+			Productos5.setOferta("-25%");
+			Productos5.setIdCategoria(2);
+
+			// Creamos la oferta de trabajo 4
+			Productos Productos6 = new Productos();
+			Productos6.setId(9);
+			Productos6.setNombre("Pendientes Medusa");
+			Productos6.setDescripcion(
+					"Pendientes de oro con incrustaciones de diamantes con diseño exclusivo de Versache. ");
+			Productos6.setFecha(sdf.parse("11-02-2019"));
+			Productos6.setPrecio(20000.0);
+			Productos6.setDestacado(1);
+			Productos6.setImagen("joya9.webp");
+			Productos6.setOferta("-14%");
+			Productos6.setIdCategoria(2);
+
+			// Agregamos los 4 objetos de tipo Vacante a la lista...
+			lista.add(Productos1);
+			lista.add(Productos2);
+			lista.add(Productos3);
+			lista.add(Productos4);
+			lista.add(Productos5);
+			lista.add(Productos6);
+			lista.add(Productos7);
+			lista.add(Productos8);
+			lista.add(Productos9);
+
+		} catch (ParseException e) {
+			System.out.println("Error: " + e.getMessage());
 		}
 
 	}
 
+	@Override
+	public List<Productos> buscarTodas() {
+		return lista;
+	}
 
+	@Override
+	public Productos buscarPorId(Integer idProductos) {
+
+		for (Productos v : lista) {
+			if (v.getId() == idProductos) {
+				return v;
+			}
+		}
+
+		return null;
+	}
+
+}

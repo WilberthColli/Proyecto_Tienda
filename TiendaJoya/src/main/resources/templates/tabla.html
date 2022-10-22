@@ -27,7 +27,7 @@
 	    <td th:text="${producto.fecha}"></td>
 	    <td th:text="${producto.precio}"></td>
 	    <td th:text="${producto.descripcion}"></td>
-	      <td th:text="${producto.categoria}"></td>
+	      <td th:text="${producto.idCategoria}"></td>
 	    <!-- 
 	    <td th:text="${producto.destacado}"></td>
 	    <td th:text="${producto.destacado == 1 ? 'Si' : 'No'}"></td>
@@ -38,7 +38,7 @@
 	    	<span th:unless="${producto.destacado==1}" class="badge bg-danger">No</span>
 	    
 	    </td>
-	    <td th:text="${producto.ofertas}"></td>
+	    <td th:text="${producto.oferta}"></td>
 	    <td>
 	   <!-- dinamica  -->
 	    	<a th:href="@{/productos/view/{id} (id=${producto.id})  }" class="btn btn-success">Detalle</a>

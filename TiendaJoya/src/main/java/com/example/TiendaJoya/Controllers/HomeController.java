@@ -1,15 +1,14 @@
 package com.example.TiendaJoya.Controllers;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.TiendaJoya.model.Producto;
+import com.example.TiendaJoya.model.Productos;
 import com.example.TiendaJoya.service.IProductosService;
 
 
@@ -21,7 +20,7 @@ public class HomeController {
 	
 	@GetMapping("/tabla")
 	public String mostrarTabla(Model model) {
-		List<Producto> lista = serviceProductos.buscarTodas();
+		List<Productos> lista = serviceProductos.buscarTodas();
 		
 			
 		model.addAttribute("productos", lista);
@@ -39,7 +38,7 @@ public class HomeController {
 	@GetMapping("/shop")
 	public String mostrarShop(Model model) {
 			
-			List<Producto> lista = serviceProductos.buscarTodas();
+			List<Productos> lista = serviceProductos.buscarTodas();
 			model.addAttribute("productos", lista);
 			
 		
@@ -47,7 +46,7 @@ public class HomeController {
 	}
 	@GetMapping("/about")
 	public String mostrarAbout(Model model) {
-		List<Producto> lista = serviceProductos.buscarTodas();
+		List<Productos> lista = serviceProductos.buscarTodas();
 		model.addAttribute("productos", lista);
 		
 		return "about";
@@ -70,7 +69,7 @@ public class HomeController {
 	@GetMapping("/collares")
 	public String mostrarCollares(Model model) {
 
-		List<Producto> lista = serviceProductos.buscarTodas();
+		List<Productos> lista = serviceProductos.buscarTodas();
 		model.addAttribute("productos", lista);
 		
 		return "collares";
@@ -78,7 +77,7 @@ public class HomeController {
 	@GetMapping("/brazaletes")
 	public String mostrarBrazaletes(Model model) {
 
-		List<Producto> lista = serviceProductos.buscarTodas();
+		List<Productos> lista = serviceProductos.buscarTodas();
 		model.addAttribute("productos", lista);
 		
 		return "brazaletes";
@@ -86,7 +85,7 @@ public class HomeController {
 	@GetMapping("/pendientes")
 	public String mostrarPendientes(Model model) {
 
-		List<Producto> lista = serviceProductos.buscarTodas();
+		List<Productos> lista = serviceProductos.buscarTodas();
 		model.addAttribute("productos", lista);
 		
 		return "pendientes";
@@ -109,7 +108,7 @@ public class HomeController {
 	
 	@GetMapping("/product_details")
 	public String mostrarDetalle(Model modelo) {
-		Producto producto = new Producto();
+		Productos producto = new Productos();
 		producto.setNombre("Collar V");
 		producto.setFecha(new Date());
 		producto.setPrecio(20000.0);

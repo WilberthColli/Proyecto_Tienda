@@ -1,5 +1,7 @@
 package com.example.TiendaJoya.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +21,9 @@ public class Productos {
 	private String Talla;
 	private Double Precio;
 	private String Imagen;
-	private Double Oferta;
+	private String Oferta;
+	private Date fecha;
+	private Integer destacado;
 	private Integer idCategoria;
 	
 	public Integer getId() {
@@ -64,11 +68,17 @@ public class Productos {
 	public void setImagen(String imagen) {
 		Imagen = imagen;
 	}
-	public Double getOferta() {
+	public String getOferta() {
 		return Oferta;
 	}
-	public void setOferta(Double oferta) {
-		Oferta = oferta;
+	public void setOferta(String oferta) {
+		this.Oferta = oferta;
+	}
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 	public Integer getIdCategoria() {
 		return idCategoria;
@@ -77,12 +87,18 @@ public class Productos {
 		this.idCategoria = idCategoria;
 	}
 	
+	public Integer getDestacado() {
+		return destacado;
+	}
+	public void setDestacado(Integer destacado) {
+		this.destacado = destacado;
+	}
 	@Override
 	public String toString() {
 		return "Productos [id=" + id + ", Nombre=" + Nombre + ", Descripcion=" + Descripcion + ", Materiales="
 				+ Materiales + ", Talla=" + Talla + ", Precio=" + Precio + ", Imagen=" + Imagen + ", Oferta=" + Oferta
-				+ ", idCategoria=" + idCategoria + "]";
+				+ ", fecha=" + fecha + ", destacado=" + destacado + ", idCategoria=" + idCategoria + "]";
 	}
 	
-	
+
 }

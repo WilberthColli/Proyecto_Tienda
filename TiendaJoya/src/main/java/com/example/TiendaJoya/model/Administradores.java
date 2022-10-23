@@ -1,9 +1,16 @@
 package com.example.TiendaJoya.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,11 +22,25 @@ public class Administradores {
 	private Integer id;
 	private String Username;
 	private String Nombre;
-	private String Apellido;
 	private String Correo;
 	private String Password;
 	private Integer Estatus;
 	private Integer Telefono;
+	
+	/*
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(name="AdminRol",
+			   joinColumns = @JoinColumn(name="idAdmin"),
+			   inverseJoinColumns = @JoinColumn(name="idRol"))
+	
+	private List<Roles> roles;
+	public void agregar(Roles tempRol) {
+		if (roles == null) {
+			roles = new LinkedList<Roles>();
+		}
+		roles.add(tempRol);
+	} 
+	*/
 	
 	//private Integer idRol;
 	
@@ -40,12 +61,6 @@ public class Administradores {
 	}
 	public void setNombre(String nombre) {
 		Nombre = nombre;
-	}
-	public String getApellido() {
-		return Apellido;
-	}
-	public void setApellido(String apellido) {
-		Apellido = apellido;
 	}
 	public String getCorreo() {
 		return Correo;
@@ -73,8 +88,8 @@ public class Administradores {
 	}
 	@Override
 	public String toString() {
-		return "Administradores [id=" + id + ", Username=" + Username + ", Nombre=" + Nombre + ", Apellido=" + Apellido
-				+ ", Correo=" + Correo + ", Password=" + Password + ", Estatus=" + Estatus + ", Telefono=" + Telefono
+		return "Administradores [id=" + id + ", Username=" + Username + ", Nombre=" + Nombre + 
+				", Correo=" + Correo + ", Password=" + Password + ", Estatus=" + Estatus + ", Telefono=" + Telefono
 				+ "]";
 	}
 		

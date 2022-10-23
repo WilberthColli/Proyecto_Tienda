@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.example.TiendaJoya.model.Administradores;
 import com.example.TiendaJoya.model.Productos;
+import com.example.TiendaJoya.service.IAdminService;
 import com.example.TiendaJoya.service.IProductosService;
 
 
@@ -18,13 +20,13 @@ public class HomeController {
 	@Autowired
 	private IProductosService serviceProductos;
 	
+	@Autowired
+	private IAdminService serviceAdmins;
+	
 	@GetMapping("/tabla")
 	public String mostrarTabla(Model model) {
 		List<Productos> lista = serviceProductos.buscarTodas();
-		
-			
 		model.addAttribute("productos", lista);
-		
 		return "tabla";
 	}
 
@@ -51,10 +53,11 @@ public class HomeController {
 		
 		return "about";
 	}
-	@GetMapping("/blog")
-	public String mostrarBlog(Model model) {
-		
-		return "blog";
+	@GetMapping("/tabla-admin")
+	public String mostrarAdmin(Model model) {
+		List<Administradores> lista = serviceAdmins.buscarTodos();
+		model.addAttribute("administradores", lista);
+		return "tabla-admin";
 	}
 	@GetMapping("/contact")
 	public String mostrarContact(Model model) {

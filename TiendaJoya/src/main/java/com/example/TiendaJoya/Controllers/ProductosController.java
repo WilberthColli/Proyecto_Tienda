@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.TiendaJoya.model.Producto;
+import com.example.TiendaJoya.model.Productos;
 import com.example.TiendaJoya.service.IProductosService;
 
 @Controller
@@ -29,7 +29,7 @@ public class ProductosController {
 	@GetMapping("/view/{id}")
 	public String verDetalle(@PathVariable("id") int idProducto, Model model) {
 		
-		Producto producto = serviceProductos.buscarPorId(idProducto);
+		Productos producto = serviceProductos.buscarPorId(idProducto);
 		model.addAttribute("producto", producto);
  
 		return "product_details";

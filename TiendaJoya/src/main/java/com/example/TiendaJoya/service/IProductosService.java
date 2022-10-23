@@ -1,10 +1,9 @@
 package com.example.TiendaJoya.service;
 
 import java.util.List;
-
-import com.example.TiendaJoya.model.Producto;
+import com.example.TiendaJoya.model.Productos;
 
 public interface IProductosService {
-	List<Producto> buscarTodas();
-	Producto buscarPorId(Integer idProducto);
+	List<Productos> buscarTodas();
+	Productos buscarPorId(Integer idProducto);
 }

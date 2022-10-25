@@ -26,6 +26,8 @@ public class ProductosController {
 		
 	}
 	
+	
+	
 	@GetMapping("/view/{id}")
 	public String verDetalle(@PathVariable("id") int idProducto, Model model) {
 		

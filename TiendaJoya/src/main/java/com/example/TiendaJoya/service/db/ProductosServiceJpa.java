@@ -3,11 +3,16 @@ package com.example.TiendaJoya.service.db;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 
 import com.example.TiendaJoya.model.Productos;
 import com.example.TiendaJoya.repository.ProductosRepository;
 import com.example.TiendaJoya.service.IProductosService;
 
+
+@Service
+@Primary
 public class ProductosServiceJpa implements IProductosService{
 
 	

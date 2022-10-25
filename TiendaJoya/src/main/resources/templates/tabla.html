@@ -4,41 +4,33 @@
 	
 	<table id="mytable" class="table table-striped table-bordered table-hover">
 	  <tr>
-	  	<th>Logo</th>
-	    <th>Id</th>
-	    <th>Nombre</th>
-	    <th>Fecha de Pub</th>
-	    <th>Precio</th>
-  	   	<th>Descripcion</th>
-  	   	<th>categorias</th>
-  	   	<th>En oferta</th>
-  	   	<th>Descuento</th>
-  	   	<th>Detalle</th>
-  	   	<th>Borrar</th>
+	  	<th scope="col">Id</th>
+	    <th scope="col">Nombre</th>
+	    <th scope="col">Descripcion</th>
+	    <th scope="col">Materiales</th>
+	    <th scope="col">Talla</th>
+  	   	<th scope="col">Precio</th>
+  	   	<th scope="col">Imagen</th>
+  	   	<th scope="col">En oferta</th>
+  	   	<th scope="col">Categoria</th>
+  	   	<th scope="col">operaciones</th>
   	   	
 	  </tr>
 
 	  <tr th:each="producto : ${productos}"> 
-	    <td>
-	    	<img th:src="@{/img/gallery/{img} ( img=${producto.imagen} ) }" width="136" height="136" >
-	    </td>
+	  
 	    <td th:text="${producto.id}"></td>
 	    <td th:text="${producto.nombre}"></td>
-	    <td th:text="${producto.fecha}"></td>
-	    <td th:text="${producto.precio}"></td>
 	    <td th:text="${producto.descripcion}"></td>
-	      <td th:text="${producto.idCategoria}"></td>
-	    <!-- 
-	    <td th:text="${producto.destacado}"></td>
-	    <td th:text="${producto.destacado == 1 ? 'Si' : 'No'}"></td>
-	    -->
-	    <td>
-	    
-	    	<span th:if="${producto.destacado==1}" class="badge bg-success">Si</span>
-	    	<span th:unless="${producto.destacado==1}" class="badge bg-danger">No</span>
-	    
-	    </td>
+	      <td th:text="${producto.materiales}"></td>
+	     <td th:text="${producto.talla}"></td>
+	    <td th:text="${producto.precio}"></td>
+	      <td>
+	    	<img th:src="@{/img/gallery/{img} ( img=${producto.imagen} ) }" width="136" height="136" >
+	      </td>
+	   
 	    <td th:text="${producto.oferta}"></td>
+	     <td th:text="${producto.idCategoria}"></td>
 	    <td>
 	   <!-- dinamica  -->
 	    	<a th:href="@{/productos/view/{id} (id=${producto.id})  }" class="btn btn-success">Detalle</a>

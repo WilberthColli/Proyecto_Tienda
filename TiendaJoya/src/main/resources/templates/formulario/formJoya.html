@@ -23,27 +23,26 @@
 
 			<form th:action="@{/productos/save}" method="post" th:object="${producto}" class="mb-30"
 				enctype="multipart/form-data">
-				
+			<!--	
 				<div th:if="${#fields.hasErrors('*')}" class='alert alert-danger' role='alert'>
 					Por favor corrija los siguientes errores:
 					<ul>
 						<li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
 					</ul>
 				</div>
-
+-->
 
 				<div class="mt-10">
 					<label class="mb-30" for="Nombre">Nombre:</label><br>
-					<input type="hidden" th:field="*{id}">
-					<input type="hidden" th:field="*{archivoImagen}">
-					<input type="text" id="Nombre" th:field="*{Nombre}" name="Nombre" placeholder="Nombre del producto" class="single-input"
+					
+					<input type="text" id="Nombre"  name="Nombre" placeholder="Nombre del producto" class="single-input"
 						onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre del producto'" value="">
 				</div>
 				<br>
 
 				<div class="mt-10">
 					<label class="mb-30" for="Descripcion">Descripción:</label><br>
-					<textarea id="Descripcion" th:field="*{Descripcion}" name="Descripcion" placeholder="Descripción del producto"
+					<textarea id="Descripcion"  name="Descripcion" placeholder="Descripción del producto"
 						class="single-input-primary" onfocus="this.placeholder = ''"
 						onblur="this.placeholder = 'Descripción del producto'"></textarea>
 				</div>
@@ -52,7 +51,7 @@
 
 				<div class="mt-10">
 					<label class="mb-30" for="Materiales">Materiales:</label><br>
-					<input type="text" id="Materiales" th:field="*{Materiales}" name="Materiales"
+					<input type="text" id="Materiales" name="Materiales"
 						placeholder="Materiales del cual está hecho el producto" class="single-input"
 						onfocus="this.placeholder = ''"
 						onblur="this.placeholder = 'Materiales del cual está hecho el producto'" value="">
@@ -63,7 +62,7 @@
 
 				<div class="mt-10">
 					<label class="mb-30" for="Talla">Talla:</label><br>
-					<input type="text" id="Talla"  th:field="*{Talla} " name="Talla" placeholder="Talla del producto" class="single-input"
+					<input type="text" id="Talla"   name="Talla" placeholder="Talla del producto" class="single-input"
 						onfocus="this.placeholder = ''" onblur="this.placeholder = 'Talla del producto'" value="">
 				</div>
 
@@ -71,7 +70,7 @@
 
 				<div class="mt-10">
 					<label class="mb-30" for="Oferta">Oferta:</label><br>
-					<input type="number" id="Oferta" th:field="*{Oferta}" name="Oferta" placeholder="Oferta del producto"
+					<input type="number" id="Oferta"  name="Oferta" placeholder="Oferta del producto"
 						class="single-input" onfocus="this.placeholder = ''"
 						onblur="this.placeholder = 'Oferta del producto'" value="">
 				</div>
@@ -79,7 +78,7 @@
 				<br>
 
 				<div class="mt-10">
-					<label  th:field="*{IdCategoria.id}" for="IdCategoria">Categoría</label>
+					<label   for="IdCategoria">Categoría</label>
 					<br>
 					<select class="form-control">
 						<option value="brazalete"> brazlate</option>

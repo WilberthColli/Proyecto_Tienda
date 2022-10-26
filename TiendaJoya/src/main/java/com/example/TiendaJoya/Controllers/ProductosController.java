@@ -54,7 +54,7 @@ public class ProductosController {
 				System.out.println("Ocurrió un error: "+ error.getDefaultMessage());
 			}	
 			
-			model.addAttribute("categorias", serviceCategorias.buscarTodas());
+			//model.addAttribute("categorias", serviceCategorias.buscarTodas());
 			return "formulario/formJoya";
 		}
 		if (!multiPart.isEmpty()) {

@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.TiendaJoya.model.Productos;
+import com.example.TiendaJoya.service.ICategoriasService;
 import com.example.TiendaJoya.service.IProductosService;
 
 
@@ -29,27 +30,31 @@ public class ProductosController {
 	
 	@Autowired
 	private IProductosService serviceProductos;
+	
+	private ICategoriasService serviceCategorias;
 
 	@GetMapping("/delete")
 	public String eliminar(@RequestParam("id") int idProducto, Model model) {
 		System.out.println("Borrando producto con id: " + idProducto);
 		model.addAttribute("id", idProducto);
-		return "delete";
+		return "tabla";
 		
 	}
 	
 	@GetMapping("/create")
-	public String crear(Productos producto) {
+	public String crear(Productos producto, Model model) {
 		return "productos/formjoya";
 	}
 	
 	
 	@PostMapping("/save")
-	public String guardar(Productos producto, BindingResult result, RedirectAttributes attributes, @RequestParam("archivoImagen") MultipartFile multiPart) {
+	public String guardar(Productos producto, BindingResult result, RedirectAttributes attributes, @RequestParam("archivoImagen") MultipartFile multiPart, Model model) {
 		if (result.hasErrors()) {
 			for (ObjectError error: result.getAllErrors()){
-				System.out.println("Ocurrio un error: "+ error.getDefaultMessage());
-			}			
+				System.out.println("Ocurrió un error: "+ error.getDefaultMessage());
+			}	
+			
+			model.addAttribute("categorias", serviceCategorias.buscarTodas());
 			return "formulario/formJoya";
 		}
 		if (!multiPart.isEmpty()) {

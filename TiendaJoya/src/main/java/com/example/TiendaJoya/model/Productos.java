@@ -68,18 +68,20 @@ public class Productos {
 		this.Oferta = oferta;
 	}
 
-	public Integer getIdCategoria() {
-		return idCategoria;
-	}
-	public void setIdCategoria(Integer idCategoria) {
-		this.idCategoria = idCategoria;
-	}
 	public String getArchivoImagen() {
 		return archivoImagen;
 	}
 	public void setArchivoImagen(String archivoImagen) {
 		this.archivoImagen = archivoImagen;
 	}
+	public Integer getIdCategoria() {
+		return idCategoria;
+	}
+	public void setIdCategoria(Integer idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+
+	
 	@Override
 	public String toString() {
 		return "Productos [id=" + id + ", Nombre=" + Nombre + ", Descripcion=" + Descripcion + ", Materiales="

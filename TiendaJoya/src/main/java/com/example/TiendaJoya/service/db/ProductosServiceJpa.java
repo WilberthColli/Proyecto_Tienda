@@ -1,6 +1,7 @@
 package com.example.TiendaJoya.service.db;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.example.TiendaJoya.model.Productos;
 import com.example.TiendaJoya.repository.ProductosRepository;
 import com.example.TiendaJoya.service.IProductosService;
+
+
 
 
 @Service
@@ -24,12 +27,17 @@ public class ProductosServiceJpa implements IProductosService{
 		System.out.println("buscando");
 		return (List<Productos>) producRepo.findAll();
 	}
-
 	@Override
 	public Productos buscarPorId(Integer idProducto) {
 		// TODO Auto-generated method stub
-		return null;
+				Optional<Productos> optional = producRepo.findById(idProducto);
+				if(optional.isPresent()) {
+				  return optional.get();
+				}
+				return null;
 	}
+
+	
 
 	@Override
 	public void guardar(Productos productos) {

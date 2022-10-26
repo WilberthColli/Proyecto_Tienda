@@ -1,6 +1,6 @@
 package com.example.TiendaJoya.Controllers;
 
-import java.util.Date;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,7 +113,6 @@ public class HomeController {
 	public String mostrarDetalle(Model modelo) {
 		Productos producto = new Productos();
 		producto.setNombre("Collar V");
-		producto.setFecha(new Date());
 		producto.setPrecio(20000.0);
 		producto.setDescripcion("Cadena de oro delgada con dije V exclusivo de Versache.");
 		

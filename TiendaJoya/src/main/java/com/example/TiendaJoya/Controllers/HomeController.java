@@ -9,10 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.TiendaJoya.model.Administradores;
+import com.example.TiendaJoya.model.Categoria;
 import com.example.TiendaJoya.model.Productos;
 import com.example.TiendaJoya.service.IAdminService;
+import com.example.TiendaJoya.service.ICategoriasService;
 import com.example.TiendaJoya.service.IProductosService;
-
 
 @Controller
 public class HomeController {
@@ -23,89 +24,59 @@ public class HomeController {
 	@Autowired
 	private IAdminService serviceAdmins;
 	
-	@GetMapping("/tabla")
-	public String mostrarTabla(Model model) {
-		List<Productos> lista = serviceProductos.buscarTodas();
-		model.addAttribute("productos", lista);
-		return "tabla";
-	}
-
+	@Autowired
+	private ICategoriasService serviceCategorias;
 	
-	
+	// PAGINAS PRINCIPALES
 	@GetMapping("/index")
 	public String mostrarHome(Model model) {
-			
 		return "index"; 
 	}
+	
 	@GetMapping("/shop")
 	public String mostrarShop(Model model) {
-			
-			List<Productos> lista = serviceProductos.buscarTodas();
-			model.addAttribute("productos", lista);
-			
-		
+		List<Productos> lista = serviceProductos.buscarTodas();
+		model.addAttribute("productos", lista);		
 		return "shop";
 	}
+	
 	@GetMapping("/about")
 	public String mostrarAbout(Model model) {
 		List<Productos> lista = serviceProductos.buscarTodas();
 		model.addAttribute("productos", lista);
-		
 		return "about";
 	}
-	@GetMapping("/tabla-admin")
-	public String mostrarAdmin(Model model) {
-		List<Administradores> lista = serviceAdmins.buscarTodos();
-		model.addAttribute("administradores", lista);
-		return "tabla-admin";
-	}
+	
 	@GetMapping("/contact")
 	public String mostrarContact(Model model) {
-		
 		return "contact";
 	}
+	
 	@GetMapping("/blog_details")
 	public String mostrarBdetails(Model model) {
-		
 		return "blog_details";
 	}
-	@GetMapping("/collares")
-	public String mostrarCollares(Model model) {
-
-		List<Productos> lista = serviceProductos.buscarTodas();
-		model.addAttribute("productos", lista);
-		
-		return "collares";
-	}
-	@GetMapping("/brazaletes")
-	public String mostrarBrazaletes(Model model) {
-
-		List<Productos> lista = serviceProductos.buscarTodas();
-		model.addAttribute("productos", lista);
-		
-		return "brazaletes";
-	}
-	@GetMapping("/pendientes")
-	public String mostrarPendientes(Model model) {
-
-		List<Productos> lista = serviceProductos.buscarTodas();
-		model.addAttribute("productos", lista);
-		
-		return "pendientes";
-	}
+	
 	@GetMapping("/elements")
 	public String mostrarElements(Model model) {
-		
 		return "elements";
 	}
-	@GetMapping("/formulario/formJoya")
-	public String mostrarEl(Model model) {
-		
-		return "formulario/formJoya";
+	
+	// PAGINAS PRODUCTOS
+	@GetMapping("/productos/tabla")
+	public String mostrarTabla(Model model) {
+		List<Productos> lista = serviceProductos.buscarTodas();
+		model.addAttribute("productos", lista);
+		return "productos/tabla-productos";
 	}
+	
+	@GetMapping("/productos/crear")
+	public String mostrarEl(Model model) {
+		return "productos/formProductos";
+	}
+	
 	@GetMapping("/joya/save")
 	public String mostrar(Model model) {
-		
 		return "formulario/guardado";
 	}
 	
@@ -119,6 +90,44 @@ public class HomeController {
 		modelo.addAttribute("producto", producto);
 		return "product_details";
 	}
+	
+	@GetMapping("/productos/collares")
+	public String mostrarCollares(Model model) {
+		List<Productos> lista = serviceProductos.buscarTodas();
+		model.addAttribute("productos", lista);
+		return "productos/collares";
+	}
+	
+	@GetMapping("/productos/brazaletes")
+	public String mostrarBrazaletes(Model model) {
+		List<Productos> lista = serviceProductos.buscarTodas();
+		model.addAttribute("productos", lista);
+		return "productos/brazaletes";
+	}
+	
+	@GetMapping("/productos/pendientes")
+	public String mostrarPendientes(Model model) {
+		List<Productos> lista = serviceProductos.buscarTodas();
+		model.addAttribute("productos", lista);
+		return "productos/pendientes";
+	}
+	
+	// PAGINAS CATEGORIAS
+	@GetMapping("/categorias/tabla")
+	public String mostrarCategorias(Model model) {
+		List<Categoria> lista = serviceCategorias.buscarTodas();
+		model.addAttribute("categorias", lista);
+		return "categorias/tabla-categorias";
+	}
+	
+	// PAGINAS ADMINISTRADORES
+	@GetMapping("/administradores/tabla")
+	public String mostrarAdmin(Model model) {
+		List<Administradores> lista = serviceAdmins.buscarTodos();
+		model.addAttribute("administradores", lista);
+		return "administradores/tabla-admin";
+	}
+
 }
 	
 	

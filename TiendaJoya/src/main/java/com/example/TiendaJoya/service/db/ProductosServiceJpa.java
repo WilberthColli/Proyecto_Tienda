@@ -11,9 +11,6 @@ import com.example.TiendaJoya.model.Productos;
 import com.example.TiendaJoya.repository.ProductosRepository;
 import com.example.TiendaJoya.service.IProductosService;
 
-
-
-
 @Service
 @Primary
 public class ProductosServiceJpa implements IProductosService{

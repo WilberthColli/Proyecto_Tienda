@@ -67,6 +67,6 @@ public class ProductosController {
 		Productos producto = serviceProductos.buscarPorId(idProducto);
 		model.addAttribute("producto", producto);
  
-		return "product_details";
+		return "productos/product_details";
 	}
 }

@@ -88,7 +88,7 @@ public class HomeController {
 		producto.setDescripcion("Cadena de oro delgada con dije V exclusivo de Versache.");
 		
 		modelo.addAttribute("producto", producto);
-		return "product_details";
+		return "productos/product_details";
 	}
 	
 	@GetMapping("/productos/collares")

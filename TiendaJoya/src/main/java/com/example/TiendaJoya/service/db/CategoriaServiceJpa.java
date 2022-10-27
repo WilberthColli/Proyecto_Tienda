@@ -20,12 +20,7 @@ public class CategoriaServiceJpa implements ICategoriasService{
 	
 	@Override
 	public List<Categoria> buscarTodas() {
-		System.out.println("buscando");
-		List<Categoria> lista = cateRepo.findAll();
-		for(Categoria c : lista) {
-			System.out.println(c.getId() + " " + c.getNombre());
-		}
-		return null;
+		return cateRepo.findAll();
 	}
 	
 	@Override

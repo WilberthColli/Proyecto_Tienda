@@ -1,141 +1,147 @@
 <div th:insert="fragments/header :: header-area"></div>
-    <main>
-        <!-- breadcrumb Start-->
-        <div class="page-notification">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Shop</a></li> 
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- listing Area Start -->
-        <div class="category-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-7 col-lg-8 col-md-10">
-                        <div class="section-tittle mb-50">
-                            <h2>Shop with us</h2>
-                            <p>Browse from 230 latest items</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row" >
-                    <!--? Left content -->
-                   
-                    <!--?  Right content -->
-                    <div class="col-xl-12 col-lg-12 col-md-10 " >
-                        <!--? New Arrival Start -->
-                        <div class="new-arrival new-arrival2">
-                            <div class="row"  >
+<main>
+	<!-- breadcrumb Start-->
+	<div class="page-notification">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb justify-content-center">
+							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Shop</a></li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- listing Area Start -->
+	<div class="category-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-7 col-lg-8 col-md-10">
+					<div class="section-tittle mb-50">
+						<h2>Shop with us</h2>
+						<p>Browse from 230 latest items</p>
+					</div>
+				</div>
+			</div>
 
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6" id="mytable" th:each="producto : ${productos}">
-                                    <div class="single-new-arrival mb-50 text-center"  >
-                                        <div class="popular-img">
-                                            <img th:src="@{/img/gallery/{img} ( img=${producto.imagen} ) }" alt="">
-                                            <div class="favorit-items">
-                                                <!-- <span class="flaticon-heart"></span> -->
-                                                <img th:src="@{/img/gallery/favorit-card.png}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="popular-caption" >
-                                         <h3 th:text="${producto.nombre}"></h3>
-                                         <div class="rating mb-10">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span th:text="${producto.precio}">$ 30.00</span>
-                                       <span> <a th:href="@{/productos/view/{id} (id=${producto.id})  }" class="btn btn-success">Detalle</a></span> 
-                                       
-                                       
-                                     
-                                    </div>
-                                </div>
-                            </div>                     
-</div>
+			<div class="row">
+				<!--? Left content -->
 
-<!-- Button -->
-<div class="row justify-content-center">
-    <div class="room-btn mt-20">
-        <a th:href="@{/about}" class="border-btn">Hot Sale</a>
-    </div>
-</div>
-</div>
-<!--? New Arrival End -->
-</div>
-</div>
-</div>
-</div>
-<!-- listing-area Area End -->
-<!--? Popular Items Start -->
-        <div class="popular-items pt-50">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
-                            <div class="popular-img">
-                                <img th:src="@{/img/gallery/secundario1.WEBP}" alt="">
-                                <div class="img-cap">
-                                    <span>Anillos</span>
-                                </div>
-                                <div class="favorit-items">
-                                 <a href="shop.html" class="btn">Shop Now</a>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                        <div class="popular-img">
-                            <img th:src="@{/img/gallery/secundario2.jpg}" alt="">
-                            <div class="img-cap">
-                                <span>Bolsos</span>
-                            </div>
-                            <div class="favorit-items">
-                             <a href="shop.html" class="btn">Shop Now</a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                    <div class="popular-img">
-                        <img th:src="@{/img/gallery/secundario3.jpg}" alt="">
-                        <div class="img-cap">
-                            <span>Gafas</span>
-                        </div>
-                        <div class="favorit-items">
-                         <a href="shop.html" class="btn">Shop Now</a>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                <div class="popular-img">
-                    <img th:src="@{/img/gallery/secundario4.WEBP}" alt="">
-                    <div class="img-cap">
-                        <span>Fragancias</span>
-                    </div>
-                    <div class="favorit-items">
-                     <a href="shop.html" class="btn">Shop Now</a>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
-</div>
-</div>
+				<!--?  Right content -->
+				<div class="col-xl-12 col-lg-12 col-md-10 ">
+					<!--? New Arrival Start -->
+					<div class="new-arrival new-arrival2">
+						<div class="row">
+
+							<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6" id="mytable"
+								th:each="producto : ${productos}" style="margin-bottom: 80px">
+								<div class="single-new-arrival mb-50 text-center">
+									<div class="popular-img">
+										<img
+											th:src="@{/img/gallery/{img} ( img=${producto.archivoImagen} ) }"
+											alt="">
+										<div class="favorit-items">
+											<!-- <span class="flaticon-heart"></span> -->
+											<img th:src="@{/img/gallery/favorit-card.png}" alt="">
+										</div>
+									</div>
+									<div class="popular-caption">
+										<h3 th:text="${producto.nombre}"></h3>
+										<div class="rating mb-10">
+											<i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+												class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+												class="fas fa-star"></i>
+										</div>
+										<span th:text="${producto.precio}">$ 30.00</span> <span>
+											<a th:href="@{/productos/view/{id} (id=${producto.id})  }"
+											class="btn btn-success">Detalle</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--? New Arrival End -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<!-- Button -->
+	<div class="row justify-content-center">
+		<div class="room-btn mt-20">
+			<a th:href="@{/about}" class="border-btn">Hot Sale</a>
+		</div>
+	</div>
+
+	<!-- listing-area Area End -->
+	<!--? Popular Items Start -->
+	<div class="popular-items pt-50">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-popular-items mb-50 text-center wow fadeInUp"
+						data-wow-duration="1s" data-wow-delay=".1s">
+						<div class="popular-img">
+							<img th:src="@{/img/gallery/secundario1.WEBP}" alt="">
+							<div class="img-cap">
+								<span>Anillos</span>
+							</div>
+							<div class="favorit-items">
+								<a href="shop.html" class="btn">Shop Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-popular-items mb-50 text-center wow fadeInUp"
+						data-wow-duration="1s" data-wow-delay=".2s">
+						<div class="popular-img">
+							<img th:src="@{/img/gallery/secundario2.jpg}" alt="">
+							<div class="img-cap">
+								<span>Bolsos</span>
+							</div>
+							<div class="favorit-items">
+								<a href="shop.html" class="btn">Shop Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-popular-items mb-50 text-center wow fadeInUp"
+						data-wow-duration="1s" data-wow-delay=".4s">
+						<div class="popular-img">
+							<img th:src="@{/img/gallery/secundario3.jpg}" alt="">
+							<div class="img-cap">
+								<span>Gafas</span>
+							</div>
+							<div class="favorit-items">
+								<a href="shop.html" class="btn">Shop Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-popular-items mb-50 text-center wow fadeInUp"
+						data-wow-duration="1s" data-wow-delay=".6s">
+						<div class="popular-img">
+							<img th:src="@{/img/gallery/secundario4.WEBP}" alt="">
+							<div class="img-cap">
+								<span>Fragancias</span>
+							</div>
+							<div class="favorit-items">
+								<a href="shop.html" class="btn">Shop Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </main>
 

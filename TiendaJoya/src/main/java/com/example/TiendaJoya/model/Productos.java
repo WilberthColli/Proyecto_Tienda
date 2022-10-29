@@ -1,11 +1,11 @@
 package com.example.TiendaJoya.model;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,9 +20,12 @@ public class Productos {
 	private String Materiales;
 	private String Talla;
 	private Double Precio;
-	private String archivoImagen;
+	private String archivoImagen="no-image.png";
 	private String Oferta;
-	private Integer idCategoria;
+
+	@OneToOne
+	@JoinColumn(name="idCategoria")
+	private Categoria categoria;
 	
 	public Integer getId() {
 		return id;
@@ -74,23 +77,18 @@ public class Productos {
 	public void setArchivoImagen(String archivoImagen) {
 		this.archivoImagen = archivoImagen;
 	}
-	public Integer getIdCategoria() {
-		return idCategoria;
+	public Categoria getCategoria() {
+		return categoria;
 	}
-	public void setIdCategoria(Integer idCategoria) {
-		this.idCategoria = idCategoria;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
-
 	
 	@Override
 	public String toString() {
 		return "Productos [id=" + id + ", Nombre=" + Nombre + ", Descripcion=" + Descripcion + ", Materiales="
 				+ Materiales + ", Talla=" + Talla + ", Precio=" + Precio + ", archivoImagen=" + archivoImagen
-				+ ", Oferta=" + Oferta + ", idCategoria=" + idCategoria + "]";
+				+ ", Oferta=" + Oferta + ", categoria=" + categoria + "]";
 	}
-
 	
-
-	
-
 }

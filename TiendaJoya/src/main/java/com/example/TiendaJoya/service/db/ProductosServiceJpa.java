@@ -13,28 +13,24 @@ import com.example.TiendaJoya.service.IProductosService;
 
 @Service
 @Primary
-public class ProductosServiceJpa implements IProductosService{
+public class ProductosServiceJpa implements IProductosService {
 
-	
 	@Autowired
 	private ProductosRepository producRepo;
-	
+
 	@Override
 	public List<Productos> buscarTodas() {
-		System.out.println("buscando");
 		return (List<Productos>) producRepo.findAll();
 	}
+
 	@Override
 	public Productos buscarPorId(Integer idProducto) {
-		// TODO Auto-generated method stub
-				Optional<Productos> optional = producRepo.findById(idProducto);
-				if(optional.isPresent()) {
-				  return optional.get();
-				}
-				return null;
+		Optional<Productos> optional = producRepo.findById(idProducto);
+		if (optional.isPresent()) {
+			return optional.get();
+		}
+		return null;
 	}
-
-	
 
 	@Override
 	public void guardar(Productos productos) {

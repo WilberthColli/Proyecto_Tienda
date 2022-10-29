@@ -1,6 +1,5 @@
 <div th:insert="fragments/header :: header-area"></div>
 
-
 <main>
 	<!-- breadcrumb Start-->
 	<div class="page-notification">
@@ -10,7 +9,8 @@
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb justify-content-center">
 							<!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
-							<li class="breadcrumb-item"><a href="#">Creación de los Productos</a></li>
+							<li class="breadcrumb-item"><a href="#">Creación de los
+									Productos</a></li>
 						</ol>
 					</nav>
 				</div>
@@ -18,99 +18,101 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-lg-8 col-md-8">
+	<div class="col-lg-8 col-md-8">
 
-			<form th:action="@{/productos/save}" method="post" th:object="${producto}" class="mb-30"
-				enctype="multipart/form-data">
-			<!--	
-				<div th:if="${#fields.hasErrors('*')}" class='alert alert-danger' role='alert'>
-					Por favor corrija los siguientes errores:
-					<ul>
-						<li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
-					</ul>
-				</div>
--->
+		<form th:action="@{/productos/save}" method="post"
+			class="mb-30">
+			
+			<div class="mt-10">
+				<label class="mb-30" for="Nombre">Nombre:</label><br> <input
+					type="text" id="Nombre" name="Nombre"
+					placeholder="Nombre del producto" class="single-input"
+					onfocus="this.placeholder = ''"
+					onblur="this.placeholder = 'Nombre del producto'" value="">
+			</div>
+			<br>
 
-				<div class="mt-10">
-					<label class="mb-30" for="Nombre">Nombre:</label><br>
-					
-					<input type="text" id="Nombre"  name="Nombre" placeholder="Nombre del producto" class="single-input"
-						onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre del producto'" value="">
-				</div>
+			<div class="mt-10">
+				<label class="mb-30" for="Descripcion">Descripción:</label><br>
+				<textarea id="Descripcion" name="Descripcion"
+					placeholder="Descripción del producto" class="single-input-primary"
+					onfocus="this.placeholder = ''"
+					onblur="this.placeholder = 'Descripción del producto'"></textarea>
+			</div>
+
+			<br>
+
+			<div class="mt-10">
+				<label class="mb-30" for="Materiales">Materiales:</label><br> <input
+					type="text" id="Materiales" name="Materiales"
+					placeholder="Materiales del cual está hecho el producto"
+					class="single-input" onfocus="this.placeholder = ''"
+					onblur="this.placeholder = 'Materiales del cual está hecho el producto'"
+					value="">
+			</div>
+
+			<br>
+
+			<div class="mt-10">
+				<label class="mb-30" for="Talla">Talla:</label><br> <input
+					type="text" id="Talla" name="Talla"
+					placeholder="Talla del producto" class="single-input"
+					onfocus="this.placeholder = ''"
+					onblur="this.placeholder = 'Talla del producto'" value="">
+			</div>
+
+			<br>
+
+			<div class="mt-10">
+				<label class="mb-30" for="Precio">Precio:</label><br> <input
+					type="number" id="Precio" name="Precio"
+					placeholder="Precio del producto" class="single-input"
+					onfocus="this.placeholder = ''"
+					onblur="this.placeholder = 'Precio del producto'" value="">
+			</div>
+
+			<br>
+
+			<div class="mt-10">
+				<label class="mb-30" for="Oferta">Oferta:</label><br> <input
+					type="number" id="Oferta" name="Oferta"
+					placeholder="Oferta del producto" class="single-input"
+					onfocus="this.placeholder = ''"
+					onblur="this.placeholder = 'Oferta del producto'" value="">
+			</div>
+
+			<br>
+
+			<div class="mt-10">
+				<label for="IdCategoria">Categoría</label>
 				<br>
-
-				<div class="mt-10">
-					<label class="mb-30" for="Descripcion">Descripción:</label><br>
-					<textarea id="Descripcion"  name="Descripcion" placeholder="Descripción del producto"
-						class="single-input-primary" onfocus="this.placeholder = ''"
-						onblur="this.placeholder = 'Descripción del producto'"></textarea>
-				</div>
-
+				<select class="form-control">
+					<option th:each="categoria : ${categorias}"
+							th:value="${categoria.id}"
+							th:text="${categoria.nombre}"
+							name="idCategoria"></option>
+				</select>
 				<br>
+			</div>
 
-				<div class="mt-10">
-					<label class="mb-30" for="Materiales">Materiales:</label><br>
-					<input type="text" id="Materiales" name="Materiales"
-						placeholder="Materiales del cual está hecho el producto" class="single-input"
-						onfocus="this.placeholder = ''"
-						onblur="this.placeholder = 'Materiales del cual está hecho el producto'" value="">
-				</div>
+			<br>
+			<div class="mt-10">
+			
+					<label for="archivoImagen">Imagen</label> <input type="file"
+						class="form-control-file" name="archivoImagen" id="archivoImagen">
+				
+			</div>
+	
 
-				<br>
+	<br>
+	<br> 
+	<button type="submit" title="Guardar producto"
+		class="genric-btn default e-large circle arrow">Guardar</button>
 
+	</form>
 
-				<div class="mt-10">
-					<label class="mb-30" for="Talla">Talla:</label><br>
-					<input type="text" id="Talla"   name="Talla" placeholder="Talla del producto" class="single-input"
-						onfocus="this.placeholder = ''" onblur="this.placeholder = 'Talla del producto'" value="">
-				</div>
-
-				<br>
-
-				<div class="mt-10">
-					<label class="mb-30" for="Oferta">Oferta:</label><br>
-					<input type="number" id="Oferta"  name="Oferta" placeholder="Oferta del producto"
-						class="single-input" onfocus="this.placeholder = ''"
-						onblur="this.placeholder = 'Oferta del producto'" value="">
-				</div>
-
-				<br>
-
-				<div class="mt-10">
-					<label   for="IdCategoria">Categoría</label>
-					<br>
-					<select class="form-control">
-						<option value="brazalete"> brazlate</option>
-					</select>
-					<br>
-				</div>
-
-				<br>
-				<div class="col-md-3">
-					<div class="form-group">
-						<label for="archivoImagen">Imagen</label>
-						<input type="file" class="form-control-file" name="archivoImagen" id="archivoImagen">
-					</div>
-				</div>
-		</div>
-
-		<br>
-
-		<div class="mt-10">
-			<label class="mb-30" for="Precio">Precio:</label><br>
-			<input type="number" id="Precio" name="Precio" placeholder="Precio del producto" class="single-input"
-				onfocus="this.placeholder = ''" onblur="this.placeholder = 'Precio del producto'" value="">
-		</div>
-
-		<br>
-
-		<br>
-		<br>
-		<button type="submit" title="Guardar producto" class="genric-btn default e-large circle arrow">Guardar</button>
-		</form>
 	</div>
-	</div>
+
 
 </main>
 

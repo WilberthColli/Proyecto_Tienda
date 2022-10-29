@@ -8,12 +8,15 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.TiendaJoya.model.Categoria;
 import com.example.TiendaJoya.model.Productos;
+import com.example.TiendaJoya.service.ICategoriasService;
 import com.example.TiendaJoya.service.IProductosService;
 
 
@@ -23,30 +26,33 @@ import net.itinajero.util.Utileria;
 @RequestMapping("/productos")
 public class ProductosController {
 	
-	private String ruta;
-	
 	@Autowired
 	private IProductosService serviceProductos;
+	
+	@Autowired
+	private ICategoriasService serviceCategorias;
 
 	@GetMapping("/delete")
-	public String eliminar(@RequestParam("id") int idProducto, Model model) {
+	public String eliminar(@PathVariable("id") int idProducto, RedirectAttributes attributes) {
 		System.out.println("Borrando producto con id: " + idProducto);
-		model.addAttribute("id", idProducto);
-		return "tabla-productos";
+		attributes.addFlashAttribute("msg", "El producto fue eliminado");
+		return "redirect:/productos/tabla";
 	}
 	
 	@GetMapping("/create")
 	public String crear(Productos producto, Model model) {
+		model.addAttribute("categorias", serviceCategorias.buscarTodas());
 		return "productos/formProductos";
 	}
 	
+	/*
 	@PostMapping("/save")
 	public String guardar(Productos producto, BindingResult result, RedirectAttributes attributes, @RequestParam("archivoImagen") MultipartFile multiPart, Model model) {
 		if (result.hasErrors()) {
 			for (ObjectError error: result.getAllErrors()){
 				System.out.println("Ocurrió un error: "+ error.getDefaultMessage());
 			}	
-			return "productos/formProductos";
+			return "productos/tabla-productos";
 		}
 		
 		if (!multiPart.isEmpty()) {
@@ -56,10 +62,19 @@ public class ProductosController {
 			}
 		}	
 		
+		
 		serviceProductos.guardar(producto);
 		attributes.addFlashAttribute("msg", "Registro Guardado");		
 		System.out.println("Producto: " + producto);		
-		return "redirect:/tabla-productos"; 
+		return "redirect:/tabla-productos";
+	}
+	*/
+	
+	@PostMapping("/save")
+	public String guardar(Productos producto, Model model) {
+		serviceProductos.guardar(producto);
+		model.addAttribute("categorias", serviceCategorias);
+		return "redirect:/productos/tabla";
 	}
 	
 	@GetMapping("/view/{id}")

@@ -34,30 +34,13 @@ public class CategoriasController {
 	public String eliminar(@PathVariable("id") int idCategoria, RedirectAttributes attributes) {
 		serviceCategorias.eliminar(idCategoria);
 		attributes.addFlashAttribute("msg", "La categoria fue eliminada");
-		return "redirect:/categorias/index";
+		return "redirect:/categorias/tabla";
 	}
 	
 	@GetMapping("/create")
 	public String crear(Categoria categoria) {
 		return "categorias/formCategoria";
 	}
-	
-	/*
-	@PostMapping("/save")
-	public String guardar(Categoria categoria, BindingResult result, RedirectAttributes attributes, Model model) {
-		if (result.hasErrors()) {
-			for (ObjectError error: result.getAllErrors()){
-				System.out.println("Ocurrió un error: "+ error.getDefaultMessage());
-			}	
-			return "categorias/tabla-categorias";
-		}	
-		
-		serviceCategorias.guardar(categoria);
-		attributes.addFlashAttribute("msg", "Registro Guardado");		
-		System.out.println("Categoria: " + categoria);		
-		return "redirect:/tabla-categorias"; 
-	}
-	*/
 	
 	@PostMapping("/save")
 	public String guardar(Categoria categoria, BindingResult result, RedirectAttributes attributes) {
@@ -70,7 +53,7 @@ public class CategoriasController {
 		
 		serviceCategorias.guardar(categoria);
 		attributes.addFlashAttribute("msg", "Categoria Creada!");
-		return "categorias/tabla-categorias";
+		return "redirect:/categorias/tabla";
 
 	}
 	

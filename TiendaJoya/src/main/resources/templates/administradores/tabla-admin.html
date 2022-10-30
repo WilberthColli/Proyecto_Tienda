@@ -2,7 +2,6 @@
  
 <h1 class="text-dark">Lista de Administradores</h1>
 	
-	<a class="btn btn-primary" th:href="@{/administradores/create}" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>
 <br>
 <div th:if="${msg != null}" class='alert alert-success' th:text="${msg}" role='alert'></div>
 <br>
@@ -11,26 +10,26 @@
 	  <tr>
 	    <th>Id</th>
 	    <th>Nombre</th>
+	    <th>Apellido</th>
 	    <th>Correo</th>
-	    <th>Telefono</th>
-  	   	<th>Username</th>
+  	   	<th>Telefono</th>
   	   	<th>Cargo</th>
 	  </tr>
 
-	  <tr th:each="administradores : ${admin}"> 
+	  <tr th:each="admin : ${administradores}"> 
 	    <td th:text="${admin.id}"></td>
-	    <td th:text="${admin.nombre}"></td>
-	    <td th:text="${admin.correo}"></td>
-	    <td th:text="${admin.telefono}"></td>
-	    <td th:text="${admin.username}"></td>
-	    <!--<td th:text="${admin.idRol}"></td>-->
+	    <td th:text="${admin.Nombre}"></td>
+	    <td th:text="${admin.Apellido}"></td>
+	    <td th:text="${admin.Correo}"></td>
+	    <td th:text="${admin.Telefono}"></td>
+	    <td th:text="${admin.rol.rol}"></td>
 
 	    <td>
 	   <!-- dinamica  -->
-	    	<a th:href="@{/administradores/view/{id} (id=$admin.id})  }" class="btn btn-success">Detalle</a>
+	    	<a th:href="@{/administradores/view/{id} (id=${admin.id})  }" class="btn btn-success">Detalle</a>
 	    </td>
 	    <td>
-	    	<a th:href="@{/administradores/delete(id=${admin.id})  }" class="btn btn-danger">Borrar</a>
+	    	<a th:href="@{/administradores/delete/{id} (id=${admin.id})  }" class="btn btn-danger">Borrar</a>
 	    </td>
 	    
 	     

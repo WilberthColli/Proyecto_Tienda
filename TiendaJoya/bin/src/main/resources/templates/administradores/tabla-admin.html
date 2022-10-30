@@ -1,0 +1,55 @@
+<div th:insert="fragments/header :: header-area"></div>
+ 
+<h1 class="text-dark">Lista de Administradores</h1>
+	
+	<a class="btn btn-primary" th:href="@{/administradores/create}" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>
+<br>
+<div th:if="${msg != null}" class='alert alert-success' th:text="${msg}" role='alert'></div>
+<br>
+	
+	<table id="mytable" class="table table-striped table-bordered table-hover">
+	  <tr>
+	    <th>Id</th>
+	    <th>Nombre</th>
+	    <th>Correo</th>
+	    <th>Telefono</th>
+  	   	<th>Username</th>
+  	   	<th>Cargo</th>
+	  </tr>
+
+	  <tr th:each="administradores : ${admin}"> 
+	    <td th:text="${admin.id}"></td>
+	    <td th:text="${admin.nombre}"></td>
+	    <td th:text="${admin.correo}"></td>
+	    <td th:text="${admin.telefono}"></td>
+	    <td th:text="${admin.username}"></td>
+	    <!--<td th:text="${admin.idRol}"></td>-->
+
+	    <td>
+	   <!-- dinamica  -->
+	    	<a th:href="@{/administradores/view/{id} (id=$admin.id})  }" class="btn btn-success">Detalle</a>
+	    </td>
+	    <td>
+	    	<a th:href="@{/administradores/delete(id=${admin.id})  }" class="btn btn-danger">Borrar</a>
+	    </td>
+	    
+	     
+	  </tr>
+	  
+	</table>
+	<!--? Search model Begin -->
+<div class="search-model-box">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-btn">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Searching key.....">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+<!-- Scroll Up -->
+<div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<div th:insert="fragments/footer :: footer-area"></div>

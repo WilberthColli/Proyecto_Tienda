@@ -55,15 +55,26 @@
                             <!-- Main-incmenu -->
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
-                                    <ul id="navigation">
-                                        <li><a th:href="@{/index}">Home</a></li> 
+                                    <ul id="navigation"> 
                                         <li><a th:href="@{/shop}">shop</a></li>
                                         <li><a th:href="@{/about}">Hot Sale</a></li>
-                                        <li><a href="#" >Admin</a>
+                                        <li><a href="#" >Productos</a>
                                             <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                 <li><a th:href="@{/tabla}">lista</a></li>
-                                                <li><a th:href="@{/formulario/formJoya}">Register</a></li>
+                                                <!-- <li><a th:href="@{/tabla-admin}">Lista Administradores</a></li> -->
+                                                 <li><a th:href="@{/productos/tabla}">Tabla de Productos</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li><a href="#">Categorias</a>
+                                            <ul class="submenu">
+                                                <!-- <li><a th:href="@{/tabla-admin}">Lista Administradores</a></li> -->
+                                                 <li><a th:href="@{/categorias/tabla}">Lista de Categorias</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li><a href="#" >Administradores</a>
+                                            <ul class="submenu">
+                                                <li><a th:href="@{/administradores/tabla}">Lista de Administradores</a></li>
                                             </ul>
                                         </li>
                                     </ul>

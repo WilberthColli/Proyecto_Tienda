@@ -1,0 +1,56 @@
+<div th:insert="fragments/header :: header-area"></div>
+
+<h1 class="text-dark">Lista de Productos</h1>
+<a class="btn btn-primary" th:href="@{/productos/create}" role="button"><i
+	class="fas fa-file" aria-hidden="true"></i> Nueva</a>
+<br>
+<div th:if="${msg != null}" class='alert alert-success' th:text="${msg}"
+	role='alert'></div>
+<br>
+
+<table id="mytable"
+	class="table table-striped table-bordered table-hover">
+	<tr>
+		<th scope="col">Categoria</th>
+		<th scope="col">Nombre</th>
+		<th scope="col">Materiales</th>
+		<th scope="col">Talla</th>
+		<th scope="col">Precio</th>
+		<th scope="col">Operaciones</th>
+	</tr>
+
+	<tr th:each="producto : ${productos}">
+		<td th:text="${producto.categoria.nombre}"></td>
+		<td th:text="${producto.nombre}"></td>
+		<td th:text="${producto.materiales}"></td>
+		<td th:text="${producto.talla}"></td>
+		<td th:text="${producto.precio}"></td>
+		<td>
+			<!-- dinamica  -->
+			<a th:href="@{/productos/edit/{id} (id=${producto.id})  }"
+			   class="btn btn-success">Editar</a>
+
+			<a th:href="@{/productos/delete(id=${producto.id})  }"
+			   class="btn btn-danger">Borrar</a>
+		</td>
+
+
+	</tr>
+
+</table>
+<!--? Search model Begin -->
+<div class="search-model-box">
+	<div class="h-100 d-flex align-items-center justify-content-center">
+		<div class="search-close-btn">+</div>
+		<form class="search-model-form">
+			<input type="text" id="search-input" placeholder="Searching key.....">
+		</form>
+	</div>
+</div>
+<!-- Search model end -->
+<!-- Scroll Up -->
+<div id="back-top">
+	<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<div th:insert="fragments/footer :: footer-area"></div>

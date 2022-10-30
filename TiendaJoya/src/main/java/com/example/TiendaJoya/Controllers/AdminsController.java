@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.TiendaJoya.model.Administradores;
+import com.example.TiendaJoya.model.Productos;
 import com.example.TiendaJoya.service.IAdminService;
 
 @Controller
@@ -32,6 +33,14 @@ public class AdminsController {
     	serviceAdmins.eliminar(idAdmin);
 		attributes.addFlashAttribute("msg", "El Administrador fue eliminado!");
 
-		return "redirect:/administradores/index";
+		return "redirect:/administradores/tabla";
+	}
+	
+	@GetMapping("/view/{id}")
+	public String verDetalle(@PathVariable("id") int idAdmin, Model model) {
+		Administradores admin = serviceAdmins.buscarPorId(idAdmin);
+		model.addAttribute("admin", admin);
+ 
+		return "administradores/admin-details";
 	}
 }

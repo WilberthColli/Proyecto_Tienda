@@ -1,0 +1,18 @@
+
+</html><div th:insert="fragments/header :: header-area"></div>
+    
+    <main>
+			<div class="small-tittle mb-20">
+			<div class="col-md-4  justify-content-center">
+			 <!--   <img  th:src="@{/img/gallery/{img} ( img=${administradores.imagen} ) }" width="250" class="my-4">-->
+			</div>
+			<div class="justify-content-center abs-center">
+			<h2>Nombre: <span th:text="${admin.Nombre}"></span> </h2>   
+    			<h2>Correo: <span th:text="${admin.Correo}"></span> </h2>
+    			<h2>Telefono: <span th:text="${admin.Telefono}"></span> </h2>
+    			<h2>Cargo: <span th:text="${admin.rol.rol}"></span> </h2>     			
+    		</div> 
+    
+    
+    </main>
+<div th:insert="fragments/footer :: footer-area"></div>

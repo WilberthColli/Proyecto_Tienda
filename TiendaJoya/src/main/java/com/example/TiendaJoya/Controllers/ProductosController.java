@@ -31,23 +31,16 @@ public class ProductosController {
 	
 	@Autowired
 	private ICategoriasService serviceCategorias;
-
-	@GetMapping("/delete")
-	public String eliminar(@PathVariable("id") int idProducto, RedirectAttributes attributes) {
-		System.out.println("Borrando producto con id: " + idProducto);
-		attributes.addFlashAttribute("msg", "El producto fue eliminado");
-		return "redirect:/productos/tabla";
-	}
 	
 	@GetMapping("/create")
 	public String crear(Productos producto, Model model) {
-		model.addAttribute("categorias", serviceCategorias.buscarTodas());
-		return "productos/formProductos";
+		model.addAttribute("categorias", serviceCategorias.buscarTodas()); 
+		return "productos/formProductos-crear";
 	}
 	
-	/*
 	@PostMapping("/save")
-	public String guardar(Productos producto, BindingResult result, RedirectAttributes attributes, @RequestParam("archivoImagen") MultipartFile multiPart, Model model) {
+	public String guardar(Productos producto, Model model, BindingResult result, RedirectAttributes attributes) {
+		// código para verificar errores
 		if (result.hasErrors()) {
 			for (ObjectError error: result.getAllErrors()){
 				System.out.println("Ocurrió un error: "+ error.getDefaultMessage());
@@ -55,26 +48,25 @@ public class ProductosController {
 			return "productos/tabla-productos";
 		}
 		
-		if (!multiPart.isEmpty()) {
-			String nombreImagen = Utileria.guardarArchivo(multiPart, ruta);
-			if (nombreImagen != null){
-				producto.setArchivoImagen (nombreImagen);
-			}
-		}	
-		
-		
 		serviceProductos.guardar(producto);
-		attributes.addFlashAttribute("msg", "Registro Guardado");		
-		System.out.println("Producto: " + producto);		
-		return "redirect:/tabla-productos";
-	}
-	*/
-	
-	@PostMapping("/save")
-	public String guardar(Productos producto, Model model) {
-		serviceProductos.guardar(producto);
+		attributes.addFlashAttribute("msg", "Registro Guardado!");
 		model.addAttribute("categorias", serviceCategorias);
 		return "redirect:/productos/tabla";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String eliminar(@PathVariable("id") int idProducto, RedirectAttributes attribute) {
+		serviceProductos.eliminar(idProducto);
+		attribute.addFlashAttribute("msg", "El producto fue eliminado!");
+		return "redirect:/productos/tabla";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String editar(@PathVariable("id") int idProducto, Model model) {
+		Productos producto = serviceProductos.buscarPorId(idProducto);
+		model.addAttribute("categorias", serviceCategorias.buscarTodas());
+		model.addAttribute("producto", producto);
+		return "productos/formProductos";
 	}
 	
 	@GetMapping("/view/{id}")

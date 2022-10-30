@@ -4,8 +4,7 @@
 <a class="btn btn-primary" th:href="@{/productos/create}" role="button"><i
 	class="fas fa-file" aria-hidden="true"></i> Nueva</a>
 <br>
-<div th:if="${msg != null}" class='alert alert-success' th:text="${msg}"
-	role='alert'></div>
+<div th:if="${msg != null}" class='alert alert-success' th:text="${msg}" role='alert'></div>
 <br>
 
 <table id="mytable"
@@ -27,11 +26,10 @@
 		<td th:text="${producto.precio}"></td>
 		<td>
 			<!-- dinamica  -->
-			<a th:href="@{/productos/edit/{id} (id=${producto.id})  }"
-			   class="btn btn-success">Editar</a>
+			<a th:href="@{/productos/edit/{id} (id=${producto.id}) }" class="btn btn-success"><i class="fas fa-edit" aria-hidden="true"></i></a>
 
-			<a th:href="@{/productos/delete(id=${producto.id})  }"
-			   class="btn btn-danger">Borrar</a>
+			<a th:href="@{/productos/delete/{id} (id=${producto.id}) }"
+			   onclick="confirm('¿Estás seguro?')" class="btn btn-danger" title="Eliminar el registro" ><i class="fas fa-trash" aria-hidden="true"></i></a>
 		</td>
 
 

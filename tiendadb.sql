@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-10-2022 a las 03:14:19
+-- Tiempo de generación: 30-10-2022 a las 18:32:05
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -69,6 +69,17 @@ CREATE TABLE `categoria` (
   `descripcion` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `nombre`, `descripcion`) VALUES
+(3, 'Collares', 'KJDFHGFHJDKOJDFH'),
+(4, 'Brazaletes', 'IUYTRESXCVBJH'),
+(5, 'Accesorios para el cabello', 'kiuytf uytfbjk iuytr iuytjhvbn'),
+(18, 'Pendientes', 'DFGHJHGFDS GXVB'),
+(19, 'Relojes', 'kg iuytrfg 8765rfvbn');
+
 -- --------------------------------------------------------
 
 --
@@ -110,10 +121,22 @@ CREATE TABLE `productos` (
   `Materiales` varchar(60) NOT NULL,
   `Talla` varchar(45) NOT NULL,
   `Precio` double NOT NULL,
-  `Imagen` varchar(45) NOT NULL,
+  `ArchivoImagen` varchar(45) NOT NULL,
   `Oferta` double DEFAULT NULL,
   `idCategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `Nombre`, `Descripcion`, `Materiales`, `Talla`, `Precio`, `ArchivoImagen`, `Oferta`, `idCategoria`) VALUES
+(1, 'Collar de oro', 'IUYTRESXCVBJHproductos', 'Oro', 'Mediano', 12000, '', 25, 3),
+(2, 'Brazalete de plata', 'IUYTRFGH brazalete', 'Plata', 'Chica', 900, '', 30, 4),
+(11, 'Pendientes de oro', 'Pendientes bañados en oro de 28k', 'Oro con plata', 'Unitalla', 800, '', 25, 18),
+(13, 'Reloj de titanio', 'Reloj bañado en titanio', 'Titanio con oro', 'Chica', 5000, '', 40, 19),
+(14, 'Collar de plata con dije', 'WKEJHGFGWHJ OEIFUYGFCVB SKDVHGBN 9876543', 'Plata', 'Mediano', 12000, '', 25, 3),
+(15, 'Reloj de plata', 'OIUYTF OIUYFCVBNM, JGFDCVBN', 'Plata', 'Grande', 1200, '', 30, 19);
 
 -- --------------------------------------------------------
 
@@ -200,7 +223,7 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -218,7 +241,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`

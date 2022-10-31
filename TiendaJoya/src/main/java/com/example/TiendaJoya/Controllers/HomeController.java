@@ -3,7 +3,11 @@ package com.example.TiendaJoya.Controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +34,7 @@ public class HomeController {
 	private ICategoriasService serviceCategorias;
 	
 	// PAGINAS PRINCIPALES
-	@GetMapping("/index")
+	@GetMapping("/")
 	public String mostrarHome(Model model) {
 		return "index"; 
 	}
@@ -130,6 +134,23 @@ public class HomeController {
 		return "administradores/tabla-admin";
 	}
 	
+	@GetMapping("/index")
+	public String mostrarIndex(Authentication auth, HttpSession session) {
+		String username = auth.getName();
+		System.out.println("Nombre del usuario: " + username);
+		
+		for(GrantedAuthority rol: auth.getAuthorities()) {
+			System.out.println("ROL:" + rol.getAuthority());
+		}
+		
+		if (session.getAttribute("admin")==null) {
+		Administradores admin = serviceAdmins.buscarPorUsername(username);
+		admin.setPassword(null);
+		System.out.println("Admin: " + admin);
+		session.setAttribute("admin", admin);
+		}
+		return "redirect:/";
+	}
 
 }
 	

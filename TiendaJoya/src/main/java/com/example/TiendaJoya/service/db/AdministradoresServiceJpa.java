@@ -43,7 +43,7 @@ public class AdministradoresServiceJpa implements IAdminService {
 
 	@Override
 	public Administradores buscarPorUsername(String username) {
-		return null;
+		return adminRepo.findByUsername(username);
 	}
 
 }

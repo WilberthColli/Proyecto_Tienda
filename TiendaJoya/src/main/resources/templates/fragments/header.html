@@ -1,124 +1,138 @@
 <!-- Header Start -->
-        <div th:fragment="header-area">
-        <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Fashion CEW & MV</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" th:href="@{/site.webmanifest}">
-    <link rel="shortcut icon" th:type="@{/image/x-icon}" th:href="@{/img/favicon.ico}">
+<div th:fragment="header-area">
+	<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
 
-    <!-- CSS here -->
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
-    <link rel="stylesheet" th:href="@{/css/slicknav.css}">
-    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
-    <link rel="stylesheet" th:href="@{/css/progressbar_barfiller.css}">
-    <link rel="stylesheet" th:href="@{/css/gijgo.css}">
-    <link rel="stylesheet" th:href="@{/css/animate.min.css}">
-    <link rel="stylesheet" th:href="@{/css/animated-headline.css}">
-    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
-    <link rel="stylesheet" th:href="@{/css/fontawesome-all.min.css}">
-    <link rel="stylesheet" th:href="@{/css/themify-icons.css}">
-    <link rel="stylesheet" th:href="@{/css/slick.css}">
-    <link rel="stylesheet" th:href="@{/css/nice-select.css}">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-    
-</head>
-<body class="full-wrapper">
-    <!-- ? Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img th:src="@{/img/logo/loder.png}" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start-->
-    <header>
-        <!-- Header Start -->
-        <div class="header-area ">
-            <div class="main-header header-sticky">
-                <div class="container-fluid">
-                    <div class="menu-wrapper d-flex align-items-center justify-content-between">
-                        <div class="header-left d-flex align-items-center">
-                            <!-- Logo -->
-                            <div class="logo">
-                                <a th:href="@{/}"><img th:src="@{/img/logo/logo.png}" alt=""></a>
-                            </div>
-                            <!-- Main-incmenu -->
-                            <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation"> 
-                                        <li><a th:href="@{/shop}">shop</a></li>
-                                        <li><a th:href="@{/about}">Hot Sale</a></li>
-                                        <li sec:authorize="hasAnyAuthority('SUPERVISOR','ADMINISTRADOR')"><a href="#" >Productos</a>
-                                            <ul class="submenu">
-                                                <!-- <li><a th:href="@{/tabla-admin}">Lista Administradores</a></li> -->
-                                                 <li><a th:href="@{/productos/tabla}">Tabla de Productos</a></li>
-                                            </ul>
-                                        </li>
-                                        
-                                        <li sec:authorize="hasAnyAuthority('SUPERVISOR','ADMINISTRADOR')"><a href="#">Categorias</a>
-                                            <ul class="submenu">
-                                                <!-- <li><a th:href="@{/tabla-admin}">Lista Administradores</a></li> -->
-                                                 <li><a th:href="@{/categorias/tabla}">Lista de Categorias</a></li>
-                                            </ul>
-                                        </li>
-                                        
-                                        <li sec:authorize="hasAnyAuthority('ADMINISTRADOR')"><a href="#" >Administradores</a>
-                                            <ul class="submenu">
-                                                <li><a th:href="@{/administradores/tabla}">Lista de Administradores</a></li>
-                                            </ul>
-                                        </li>
-                                        
-                                        <li><a href="#" >Sesión</a>
-                                        	<ul class="submenu">
-                                        	
-                                        	<li sec:authorize="isAnonymous()" ><a th:href="@{/index}">Ingresar</a></li>
-                                        	<li sec:authorize="isAnonymous()" ><a th:href="@{/signup}">Registrarse</a></li>
-                                        	<li sec:authorize="isAuthenticated()" ><a th:href="@{/logout}">Salir</a>
-                                        	</ul>               	
-                                        </li>
-                                        <!--<li><span class="popular-caption" th:if="${session.admin != null}" th:text="'Bienvenido ' + ${session.admin.Nombre}"></span></li>-->
-                                        <li sec:authorize="isAuthenticated()" ><span class="sample-text">Bienvenido</span>&nbsp;<span class="sample-text" sec:authentication="name"></span></li>
-                                    </ul>
-                                </nav>
-                            </div>   
-                        </div>
-                        <div class="header-right1 d-flex align-items-center">
-                             <!-- Social -->
-                            <div class="header-social  d-md-block">
-                               
-                               
-                            </div>
-                            <!-- Search Box -->
-                            <div class="  ">
-                                <ul class="d-flex align-items-center">
-                                    <li class="mr-15 ">
-                                       
-                                    </li>
-                                    <li>
-                                       <div style="width:100%"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
-    <!-- header end -->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Fashion CEW & MV</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="manifest" th:href="@{/site.webmanifest}">
+		<link rel="shortcut icon" th:type="@{/image/x-icon}" th:href="@{/img/favicon.ico}">
+
+		<!-- CSS here -->
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+		<link rel="stylesheet" th:href="@{/css/slicknav.css}">
+		<link rel="stylesheet" th:href="@{/css/flaticon.css}">
+		<link rel="stylesheet" th:href="@{/css/progressbar_barfiller.css}">
+		<link rel="stylesheet" th:href="@{/css/gijgo.css}">
+		<link rel="stylesheet" th:href="@{/css/animate.min.css}">
+		<link rel="stylesheet" th:href="@{/css/animated-headline.css}">
+		<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+		<link rel="stylesheet" th:href="@{/css/fontawesome-all.min.css}">
+		<link rel="stylesheet" th:href="@{/css/themify-icons.css}">
+		<link rel="stylesheet" th:href="@{/css/slick.css}">
+		<link rel="stylesheet" th:href="@{/css/nice-select.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	</head>
+
+	<body class="full-wrapper">
+		<!-- ? Preloader Start -->
+		<div id="preloader-active">
+			<div class="preloader d-flex align-items-center justify-content-center">
+				<div class="preloader-inner position-relative">
+					<div class="preloader-circle"></div>
+					<div class="preloader-img pere-text">
+						<img th:src="@{/img/logo/loder.png}" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Preloader Start-->
+		<header>
+			<!-- Header Start -->
+			<div class="header-area ">
+				<div class="main-header header-sticky">
+					<div class="container-fluid">
+						<div class="menu-wrapper d-flex align-items-center justify-content-between">
+							<div class="header-left d-flex align-items-center">
+								<!-- Logo -->
+								<div class="logo">
+									<a th:href="@{/}"><img th:src="@{/img/logo/logo.png}" alt=""></a>
+								</div>
+								<!-- Main-incmenu -->
+								<div class="main-menu  d-none d-lg-block">
+									<nav>
+										<ul id="navigation">
+											<li><a th:href="@{/shop}">shop</a></li>
+											<li><a th:href="@{/about}">Hot Sale</a></li>
+											<li sec:authorize="hasAnyAuthority('SUPERVISOR','ADMINISTRADOR')"><a
+													href="#">Productos</a>
+												<ul class="submenu">
+													<!-- <li><a th:href="@{/tabla-admin}">Lista Administradores</a></li> -->
+													<li><a th:href="@{/productos/tabla}">Tabla de Productos</a></li>
+													<li><a th:href="@{/productos/create}">Registrar Productos</a></li>
+												</ul>
+											</li>
+
+											<li sec:authorize="hasAnyAuthority('SUPERVISOR','ADMINISTRADOR')"><a
+													href="#">Categorias</a>
+												<ul class="submenu">
+													<!-- <li><a th:href="@{/tabla-admin}">Lista Administradores</a></li> -->
+													<li><a th:href="@{/categorias/tabla}">Lista de Categorias</a></li>
+													<li><a th:href="@{/categorias/create}">Registrar Categorias</a></li>
+												</ul>
+
+											</li>
+
+											<li sec:authorize="hasAnyAuthority('ADMINISTRADOR')"><a
+													href="#">Administradores</a>
+												<ul class="submenu">
+													<li><a th:href="@{/administradores/tabla}">Lista de
+															Administradores</a></li>
+												</ul>
+											</li>
+
+											<li><a href="#">Sesión</a>
+												<ul class="submenu">
+
+													<li sec:authorize="isAnonymous()"><a
+															th:href="@{/index}">Ingresar</a></li>
+													<li sec:authorize="isAnonymous()"><a
+															th:href="@{/signup}">Registrarse</a></li>
+													<li sec:authorize="isAuthenticated()"><a
+															th:href="@{/logout}">Salir</a>
+												</ul>
+											</li>
+											<!--<li><span class="popular-caption" th:if="${session.admin != null}" th:text="'Bienvenido ' + ${session.admin.Nombre}"></span></li>-->
+											<li sec:authorize="isAuthenticated()"><span
+													class="sample-text">Bienvenido</span>&nbsp;<span class="sample-text"
+													sec:authentication="name"></span></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+							<div class="header-right1 d-flex align-items-center">
+								<!-- Social -->
+								<div class="header-social  d-md-block">
+
+
+								</div>
+								<!-- Search Box -->
+								<div class="  ">
+									<ul class="d-flex align-items-center">
+										<li class="mr-15 ">
+
+										</li>
+										<li>
+											<div style="width:100%"></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- Mobile Menu -->
+							<div class="col-12">
+								<div class="mobile_menu d-block d-lg-none"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Header End -->
+		</header>
+		<!-- header end -->
 </div>

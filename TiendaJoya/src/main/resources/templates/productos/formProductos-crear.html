@@ -19,7 +19,7 @@
 
 	<div class="col-lg-8 col-md-8">
 
-		<form th:action="@{/productos/save}" method="post" class="mb-30" th:object="${productos}">
+		<form th:action="@{/productos/save}" method="post" class="mb-30" th:object="${productos}" enctype="multipart/form-data">
 			<input type="hidden" th:field="*{id}">
 
 			<div class="mt-10">

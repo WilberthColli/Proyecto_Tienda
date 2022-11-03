@@ -39,13 +39,22 @@ public class ProductosController {
 	}
 	
 	@PostMapping("/save")
-	public String guardar(Productos producto, Model model, BindingResult result, RedirectAttributes attributes) {
+	public String guardar(Productos producto, Model model, BindingResult result, RedirectAttributes attributes, @RequestParam("archivoImagen") MultipartFile multiPart) {
 		// código para verificar errores
 		if (result.hasErrors()) {
 			for (ObjectError error: result.getAllErrors()){
 				System.out.println("Ocurrió un error: "+ error.getDefaultMessage());
 			}	
 			return "productos/tabla-productos";
+		}if (!multiPart.isEmpty()) {
+			//String ruta = "c:/empleos/img-vacantes/"; // Windows
+			String nombreImagen = Utileria.guardarArchivo(multiPart, "c:/empleos/img-vacantes/");
+			if (nombreImagen != null){ // La imagen si se subio
+			// Procesamos la variable nombreImagen
+
+			producto.setImagen (nombreImagen);
+
+			}
 		}
 		
 		serviceProductos.guardar(producto);

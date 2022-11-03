@@ -20,7 +20,7 @@ public class Productos {
 	private String Materiales;
 	private String Talla;
 	private Double Precio;
-	private String archivoImagen="no-image.png";
+	private String Imagen="no-image.png";
 	private String Oferta;
 
 	@OneToOne
@@ -71,11 +71,12 @@ public class Productos {
 		this.Oferta = oferta;
 	}
 
-	public String getArchivoImagen() {
-		return archivoImagen;
+	
+	public String getImagen() {
+		return Imagen;
 	}
-	public void setArchivoImagen(String archivoImagen) {
-		this.archivoImagen = archivoImagen;
+	public void setImagen(String imagen) {
+		Imagen = imagen;
 	}
 	public Categoria getCategoria() {
 		return categoria;
@@ -83,12 +84,13 @@ public class Productos {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
 	@Override
 	public String toString() {
 		return "Productos [id=" + id + ", Nombre=" + Nombre + ", Descripcion=" + Descripcion + ", Materiales="
-				+ Materiales + ", Talla=" + Talla + ", Precio=" + Precio + ", archivoImagen=" + archivoImagen
-				+ ", Oferta=" + Oferta + ", categoria=" + categoria + "]";
+				+ Materiales + ", Talla=" + Talla + ", Precio=" + Precio + ", Imagen=" + Imagen + ", Oferta=" + Oferta
+				+ ", categoria=" + categoria + "]";
 	}
+	
+	
 	
 }

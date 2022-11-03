@@ -48,7 +48,7 @@ public class ProductosController {
 			return "productos/tabla-productos";
 		}if (!multiPart.isEmpty()) {
 			//String ruta = "c:/empleos/img-vacantes/"; // Windows
-			String nombreImagen = Utileria.guardarArchivo(multiPart, "c:/empleos/img-vacantes/");
+			String nombreImagen = Utileria.guardarArchivo(multiPart, "c:/empleos/jota/");
 			if (nombreImagen != null){ // La imagen si se subio
 			// Procesamos la variable nombreImagen
 

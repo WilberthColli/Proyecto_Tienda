@@ -1,0 +1,18 @@
+<div th:insert="fragments/header :: header-area"></div>
+    
+    <main>
+			<div class="small-tittle mb-20">
+			<div class="col-md-4  justify-content-center">
+			  <img  th:src="@{/img/gallery/{img} ( img=${producto.imagen} ) }" width="250" class="my-4">
+			</div>
+			<div class="justify-content-center abs-center">
+			<h2>Nombre: <span th:text="${producto.nombre}"></span> </h2>   
+    			<h2>Descripcion: <span th:text="${producto.descripcion}"></span> </h2>
+    			<h2>Precio: $<span th:text="${producto.precio}"></span> </h2>
+    			<h2>Fecha: <span th:text="${producto.fecha}"></span> </h2></div>
+    			
+    		</div> 
+    
+    
+    </main>
+<div th:insert="fragments/footer :: footer-area"></div>

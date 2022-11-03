@@ -38,7 +38,7 @@
 						<div class="row">
 
 							<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6"
-								th:each="producto : ${productos}" style="margin-bottom: 150px">
+								th:each="producto : ${productos}">
 								<div class="single-new-arrival mb-50 text-center">
 									<div class="popular-img">
 										<img
@@ -56,9 +56,10 @@
 												class="fas fa-star"></i> <i class="fas fa-star"></i> <i
 												class="fas fa-star"></i>
 										</div>
-										<span th:text="${producto.precio}">$ 30.00</span> <span
-											class="btn btn-danger" th:text="${producto.oferta}">$
-											30.00</span>
+										<span th:text="${producto.precio}"></span>
+										<div class="btn btn-danger">
+											<span>-<strong th:text="${producto.oferta}"></strong>%</span>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -83,10 +84,10 @@
 						<div class="popular-img">
 							<img th:src="@{/img/gallery/secundario1.WEBP}" alt="">
 							<div class="img-cap">
-								<span>Anillos</span>
+								<span>Collares</span>
 							</div>
 							<div class="favorit-items">
-								<a href="shop.html" class="btn">Shop Now</a>
+								<a th:href="@{/productos/collares}" class="btn">Shop Now</a>
 							</div>
 						</div>
 					</div>
@@ -97,10 +98,10 @@
 						<div class="popular-img">
 							<img th:src="@{/img/gallery/secundario2.jpg}" alt="">
 							<div class="img-cap">
-								<span>Bolsos</span>
+								<span>Pendientes</span>
 							</div>
 							<div class="favorit-items">
-								<a href="shop.html" class="btn">Shop Now</a>
+								<a th:href="@{/productos/pendientes}" class="btn">Shop Now</a>
 							</div>
 						</div>
 					</div>
@@ -111,10 +112,10 @@
 						<div class="popular-img">
 							<img th:src="@{/img/gallery/secundario3.jpg}" alt="">
 							<div class="img-cap">
-								<span>Gafas</span>
+								<span>Brazaletes</span>
 							</div>
 							<div class="favorit-items">
-								<a href="shop.html" class="btn">Shop Now</a>
+								<a th:href="@{/productos/brazaletes}" class="btn">Shop Now</a>
 							</div>
 						</div>
 					</div>
